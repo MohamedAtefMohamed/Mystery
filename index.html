@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MYSTERY - Enterprise Cybersecurity Solutions. Offensive security, vulnerability assessments, and advanced defense strategies.">
+    <title>MYSTERY | Enterprise Cybersecurity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'volcano-red': '#ff2400',
+                        'dark-gray': '#111111',
+                    },
+                    fontFamily: {
+                        'space': ['Space Grotesk', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'marquee': 'marquee 25s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "radial-gradient(circle at center, rgba(255,255,255,0.1) 1px, transparent 1px)",
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-white font-inter overflow-x-hidden loading">
+    
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[9999] bg-black flex flex-col items-center justify-center transition-all duration-1000">
+        <div class="cyber-glitch-text text-4xl font-space font-bold text-volcano-red mb-4" data-text="SYSTEM_BOOT">SYSTEM_BOOT</div>
+        <div class="w-64 h-1 bg-dark-gray overflow-hidden">
+            <div id="loader-bar" class="h-full bg-volcano-red w-0 transition-all duration-300"></div>
+        </div>
+        <div id="loader-text" class="mt-2 text-xs font-mono text-volcano-red opacity-70">INITIALIZING SECURITY PROTOCOLS...</div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-volcano-red z-[9998] transition-all duration-100 w-0"></div>
+
+    <!-- Navbar -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-transparent px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3 group">
+                <span class="font-space font-bold text-xl tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white to-volcano-red">MYSTERY</span>
+            </a>
+
+            <nav class="hidden md:flex gap-8">
+                <a href="#about" class="text-sm font-medium hover:text-volcano-red transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-volcano-red hover:after:w-full after:transition-all">About</a>
+                <a href="#services" class="text-sm font-medium hover:text-volcano-red transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-volcano-red hover:after:w-full after:transition-all">Services</a>
+                <a href="#why-us" class="text-sm font-medium hover:text-volcano-red transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-volcano-red hover:after:w-full after:transition-all">Why Us</a>
+                <a href="#process" class="text-sm font-medium hover:text-volcano-red transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-volcano-red hover:after:w-full after:transition-all">Process</a>
+            </nav>
+
+            <a href="#contact" class="hidden md:inline-flex  items-center justify-center px-5 py-2 text-sm font-medium text-volcano-red border border-volcano-red/30 rounded hover:bg-volcano-red/10 hover:border-volcano-red transition-all">
+                Contact Sales
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white" aria-label="Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+            <!-- Background Layers -->
+            <div class="absolute inset-0 z-0 bg-hero-pattern opacity-20 parallax" data-speed="0.2"></div>
+            <div class="absolute inset-0 z-0 bg-gradient-to-b from-black/50 via-black to-black"></div>
+            
+            <!-- Matrix Rain Canvas -->
+            <canvas id="matrix-canvas" class="absolute inset-0 z-0 opacity-30"></canvas>
+
+            <div class="max-w-7xl mx-auto px-6 relative z-10 w-full grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+
+                    
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-space font-bold leading-tight reveal-up" style="transition-delay: 100ms;">
+                        Securing <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-volcano-red to-white">What Matters</span>
+                    </h1>
+                    
+                    <p class="text-lg text-gray-400 max-w-xl font-light leading-relaxed reveal-up" style="transition-delay: 200ms;">
+                        Elite cybersecurity professionals protecting organizations from modern cyber threats through offensive security, security assessments, and advanced defense strategies.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 reveal-up" style="transition-delay: 300ms;">
+                        <a href="#contact" class=" relative inline-flex items-center justify-center px-8 py-4 font-medium text-black bg-volcano-red rounded hover:bg-white hover:text-black transition-colors overflow-hidden group">
+                            <span class="absolute inset-0 w-full h-full -mt-1 rounded opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
+                            <span class="relative flex items-center gap-2">
+                                Start Assessment
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class=" transition-transform"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </span>
+                        </a>
+                        <a href="#services" class=" inline-flex items-center justify-center px-8 py-4 font-medium text-white border border-gray-700 rounded hover:border-volcano-red hover:text-volcano-red transition-colors">
+                            Explore Services
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Abstract Hero Graphic -->
+                <div class="hidden lg:block relative h-[600px] parallax reveal-right" data-speed="-0.1">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,36,0,0.1)_0%,transparent_70%)]"></div>
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-volcano-red/20 rounded-full animate-[spin_10s_linear_infinite]"></div>
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-volcano-red/40 rounded-full animate-[spin_15s_linear_infinite_reverse] border-dashed"></div>
+                    
+                    <!-- Floating Data Cards -->
+                    <div class="absolute top-1/4 right-10 glass-panel p-4 rounded border border-white/10 animate-float" style="animation-delay: 0s;">
+                        <div class="text-xs text-gray-400 font-mono mb-1">THREAT LEVEL</div>
+                        <div class="text-volcano-red font-bold text-xl">ELEVATED</div>
+                    </div>
+                    <div class="absolute bottom-1/3 left-10 glass-panel p-4 rounded border border-white/10 animate-float" style="animation-delay: -2s;">
+                        <div class="text-xs text-gray-400 font-mono mb-1">VULNERABILITIES</div>
+                        <div class="text-white font-bold text-xl">ZERO-DAY</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity animate-bounce">
+                <span class="text-xs font-mono tracking-widest text-volcano-red uppercase">Scroll</span>
+                <div class="w-[1px] h-8 bg-gradient-to-b from-volcano-red to-transparent"></div>
+            </div>
+        </section>
+
+        <!-- Trusted By Marquee -->
+        <div class="py-10 border-y border-white/5 bg-black/50 overflow-hidden relative">
+            <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10"></div>
+            <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10"></div>
+            
+            <div class="flex whitespace-nowrap animate-marquee">
+                <!-- Logos (Repeated for infinite effect) -->
+                <div class="flex items-center gap-16 px-8 text-gray-500 font-space text-xl font-bold opacity-50 grayscale hover:grayscale-0 transition-all">
+                    <span>TECHCORP</span>
+                    <span>GLOBALNET</span>
+                    <span>SECUREFIN</span>
+                    <span>DATAVISION</span>
+                    <span>CLOUDGUARD</span>
+                    <span>TECHCORP</span>
+                    <span>GLOBALNET</span>
+                    <span>SECUREFIN</span>
+                    <span>DATAVISION</span>
+                    <span>CLOUDGUARD</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <section class="py-24 relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/5">
+                    <div class="text-center reveal-up">
+                        <div class="text-4xl md:text-5xl font-space font-bold text-volcano-red mb-2 counter" data-target="500">0</div>
+                        <div class="text-sm text-gray-400 font-medium uppercase tracking-wider">Security Assessments</div>
+                    </div>
+                    <div class="text-center reveal-up" style="transition-delay: 100ms;">
+                        <div class="text-4xl md:text-5xl font-space font-bold text-volcano-red mb-2 counter" data-target="200">0</div>
+                        <div class="text-sm text-gray-400 font-medium uppercase tracking-wider">Clients Protected</div>
+                    </div>
+                    <div class="text-center reveal-up" style="transition-delay: 200ms;">
+                        <div class="text-4xl md:text-5xl font-space font-bold text-volcano-red mb-2 counter" data-target="12000">0</div>
+                        <div class="text-sm text-gray-400 font-medium uppercase tracking-wider">Vulns Identified</div>
+                    </div>
+                    <div class="text-center reveal-up" style="transition-delay: 300ms;">
+                        <div class="text-4xl md:text-5xl font-space font-bold text-volcano-red mb-2">24/7</div>
+                        <div class="text-sm text-gray-400 font-medium uppercase tracking-wider">Security Support</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-volcano-red/5 rounded-full blur-[100px] -z-10 translate-x-1/3 -translate-y-1/3"></div>
+            
+            <div class="max-w-3xl mx-auto px-6 text-center">
+                
+                <div class="space-y-6 reveal-up">
+                    <h2 class="text-sm font-mono text-volcano-red uppercase tracking-widest">Who We Are</h2>
+                    <h3 class="text-4xl md:text-5xl font-space font-bold">The <span class="text-transparent bg-clip-text bg-gradient-to-r from-volcano-red to-white">MYSTERY</span> Team</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        MYSTERY is a premier cybersecurity collective specializing in offensive security, penetration testing, and strategic threat intelligence. 
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Our mission is to outpace adversaries. We help organizations identify critical risks before attackers do, combining deep technical expertise with a strategic, business-first mindset.
+                    </p>
+                    <ul class="space-y-4 mt-8">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-volcano-red flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-gray-300"><strong>Offensive Mindset:</strong> We think like attackers to construct unbreakable defenses.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-volcano-red flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-gray-300"><strong>Research Driven:</strong> Continuous evolution aligning with the bleeding-edge threat landscape.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-volcano-red flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-gray-300"><strong>Client First:</strong> Transparent, highly confidential, and rigorously results-oriented.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24 bg-dark-gray/30 relative border-y border-white/5">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal-up">
+                    <h2 class="text-sm font-mono text-volcano-red uppercase tracking-widest mb-4">Core Capabilities</h2>
+                    <h3 class="text-4xl md:text-5xl font-space font-bold mb-6">Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-volcano-red to-white">Services</span></h3>
+                    <p class="text-gray-400 text-lg">Comprehensive offensive security solutions tailored to identify, exploit, and remediate vulnerabilities across your entire attack surface.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+                    <!-- Service Card 1 -->
+                    <div class="glass-panel p-8 rounded-xl border border-white/5 hover:border-volcano-red/50 transition-colors group tilt-card reveal-up">
+                        <div class="w-14 h-14 rounded-lg bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:bg-volcano-red/10 transition-colors">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-volcano-red"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+                        </div>
+                        <h4 class="text-xl font-space font-bold mb-3 text-white group-hover:text-volcano-red transition-colors">Penetration Testing</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Simulate real-world attacks against your systems to uncover exploitable vulnerabilities before malicious actors do. Manual, deep-dive testing beyond automated scanners.</p>
+                        <a href="#" class="inline-flex items-center text-sm font-medium text-volcano-red hover:text-white transition-colors">
+                            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ml-1"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="glass-panel p-8 rounded-xl border border-white/5 hover:border-volcano-red/50 transition-colors group tilt-card reveal-up" style="transition-delay: 100ms;">
+                        <div class="w-14 h-14 rounded-lg bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:bg-volcano-red/10 transition-colors">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-volcano-red"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        </div>
+                        <h4 class="text-xl font-space font-bold mb-3 text-white group-hover:text-volcano-red transition-colors">Web App Security</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">In-depth assessment of web applications focusing on OWASP Top 10, complex business logic flaws, API vulnerabilities, and authentication weaknesses.</p>
+                        <a href="#" class="inline-flex items-center text-sm font-medium text-volcano-red hover:text-white transition-colors">
+                            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ml-1"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="glass-panel p-8 rounded-xl border border-white/5 hover:border-volcano-red/50 transition-colors group tilt-card reveal-up" style="transition-delay: 200ms;">
+                        <div class="w-14 h-14 rounded-lg bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:bg-volcano-red/10 transition-colors">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-volcano-red"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                        </div>
+                        <h4 class="text-xl font-space font-bold mb-3 text-white group-hover:text-volcano-red transition-colors">Network Assessment</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Comprehensive evaluation of internal and external network infrastructure, firewall configurations, Active Directory environments, and segmentation controls.</p>
+                        <a href="#" class="inline-flex items-center text-sm font-medium text-volcano-red hover:text-white transition-colors">
+                            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ml-1"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                    
+
+
+                    <!-- Service Card 5 -->
+                    <div class="glass-panel p-8 rounded-xl border border-white/5 hover:border-volcano-red/50 transition-colors group tilt-card reveal-up" style="transition-delay: 100ms;">
+                        <div class="w-14 h-14 rounded-lg bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:bg-volcano-red/10 transition-colors">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-volcano-red"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        </div>
+                        <h4 class="text-xl font-space font-bold mb-3 text-white group-hover:text-volcano-red transition-colors">Vulnerability Mgmt</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-6">Continuous discovery, strategic prioritization, and remediation tracking of security vulnerabilities across your dynamic, evolving attack surface.</p>
+                        <a href="#" class="inline-flex items-center text-sm font-medium text-volcano-red hover:text-white transition-colors">
+                            Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ml-1"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Us Section -->
+        <section id="why-us" class="py-24 relative overflow-hidden">
+            <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-volcano-red/5 rounded-full blur-[100px] -z-10 -translate-x-1/2 translate-y-1/3"></div>
+            
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal-up">
+                    <h2 class="text-sm font-mono text-volcano-red uppercase tracking-widest mb-4">The MYSTERY Advantage</h2>
+                    <h3 class="text-4xl md:text-5xl font-space font-bold mb-6">Why Choose <span class="text-transparent bg-clip-text bg-gradient-to-r from-volcano-red to-white">Us</span></h3>
+                    <p class="text-gray-400 text-lg">We bring an unparalleled level of expertise and dedication to every engagement, setting the standard for modern offensive security.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="p-8 border border-white/5 bg-black rounded-xl hover:border-volcano-red/30 transition-all group reveal-up">
+                        <div class="w-12 h-12 rounded-full bg-volcano-red/10 flex items-center justify-center text-volcano-red mb-6 group-hover:scale-110 transition-transform">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h4 class="text-xl font-space font-bold mb-3">Elite Talent</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Our team consists of top-tier security researchers, exploit developers, and former intelligence professionals with decades of combined experience.</p>
+                    </div>
+                    
+                    <!-- Feature 2 -->
+                    <div class="p-8 border border-white/5 bg-black rounded-xl hover:border-volcano-red/30 transition-all group reveal-up" style="transition-delay: 100ms;">
+                        <div class="w-12 h-12 rounded-full bg-volcano-red/10 flex items-center justify-center text-volcano-red mb-6 group-hover:scale-110 transition-transform">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+                        </div>
+                        <h4 class="text-xl font-space font-bold mb-3">Custom Tooling</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">We develop proprietary exploits and custom attack frameworks tailored to your environment, bypassing standard commercial security controls.</p>
+                    </div>
+                    
+                    <!-- Feature 3 -->
+                    <div class="p-8 border border-white/5 bg-black rounded-xl hover:border-volcano-red/30 transition-all group reveal-up" style="transition-delay: 200ms;">
+                        <div class="w-12 h-12 rounded-full bg-volcano-red/10 flex items-center justify-center text-volcano-red mb-6 group-hover:scale-110 transition-transform">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        </div>
+                        <h4 class="text-xl font-space font-bold mb-3">Absolute Confidentiality</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">We operate with the highest level of discretion. Your data, vulnerabilities, and engagement details are strictly compartmentalized and secured.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="py-24 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6">
+                 <div class="text-center max-w-3xl mx-auto mb-16 reveal-up">
+                    <h2 class="text-sm font-mono text-volcano-red uppercase tracking-widest mb-4">Methodology</h2>
+                    <h3 class="text-4xl md:text-5xl font-space font-bold mb-6">Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-volcano-red to-white">Process</span></h3>
+                </div>
+
+                <div class="relative">
+                    <!-- Connecting Line -->
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-white/10 -translate-y-1/2"></div>
+                    
+                    <div class="grid md:grid-cols-4 gap-8">
+                        <!-- Step 1 -->
+                        <div class="relative group reveal-up">
+                            <div class="md:mx-auto w-12 h-12 rounded-full bg-black border-2 border-white/20 flex items-center justify-center text-xl font-space font-bold relative z-10 group-hover:border-volcano-red group-hover:text-volcano-red transition-colors mb-6">
+                                1
+                            </div>
+                            <h4 class="text-xl font-space font-bold mb-2">Scoping & ROE</h4>
+                            <p class="text-sm text-gray-400">Define precise objectives, rules of engagement, and threat models tailored to your business.</p>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="relative group reveal-up" style="transition-delay: 100ms;">
+                            <div class="md:mx-auto w-12 h-12 rounded-full bg-black border-2 border-white/20 flex items-center justify-center text-xl font-space font-bold relative z-10 group-hover:border-volcano-red group-hover:text-volcano-red transition-colors mb-6">
+                                2
+                            </div>
+                            <h4 class="text-xl font-space font-bold mb-2">Execution</h4>
+                            <p class="text-sm text-gray-400">Methodical intelligence gathering, vulnerability identification, and safe exploitation.</p>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="relative group reveal-up" style="transition-delay: 200ms;">
+                            <div class="md:mx-auto w-12 h-12 rounded-full bg-black border-2 border-white/20 flex items-center justify-center text-xl font-space font-bold relative z-10 group-hover:border-volcano-red group-hover:text-volcano-red transition-colors mb-6">
+                                3
+                            </div>
+                            <h4 class="text-xl font-space font-bold mb-2">Reporting</h4>
+                            <p class="text-sm text-gray-400">Delivery of actionable executive and deeply technical reports with clear remediation steps.</p>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="relative group reveal-up" style="transition-delay: 300ms;">
+                            <div class="md:mx-auto w-12 h-12 rounded-full bg-black border-2 border-white/20 flex items-center justify-center text-xl font-space font-bold relative z-10 group-hover:border-volcano-red group-hover:text-volcano-red transition-colors mb-6">
+                                4
+                            </div>
+                            <h4 class="text-xl font-space font-bold mb-2">Remediation & Retest</h4>
+                            <p class="text-sm text-gray-400">Ongoing support during patching, followed by a targeted retest to verify closure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 relative border-t border-white/5 bg-gradient-to-b from-dark-gray/30 to-black">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16">
+                    <div class="reveal-left">
+                        <h2 class="text-sm font-mono text-volcano-red uppercase tracking-widest mb-4">Initiate Protocol</h2>
+                        <h3 class="text-4xl md:text-5xl font-space font-bold mb-6">Secure Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-volcano-red to-white">Perimeter</span></h3>
+                        <p class="text-gray-400 text-lg mb-8">Ready to elevate your security posture? Contact our elite team to discuss your specific requirements. All communications are strictly confidential.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded bg-white/5 border border-white/10 flex items-center justify-center text-volcano-red">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-500 font-mono">SECURE COMM CHANNEL</div>
+                                    <div class="font-medium text-lg">mystery.security@gmail.com</div>
+                                </div>
+                            </div>
+                             <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded bg-white/5 border border-white/10 flex items-center justify-center text-volcano-red">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                </div>
+                                <div>
+                                    <div class="text-sm text-gray-500 font-mono">PGP KEY FINGERPRINT</div>
+                                    <div class="font-mono text-xs text-gray-300 tracking-wider">A1B2 C3D4 E5F6 7890 1234  5678 90AB CDEF</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reveal-right">
+                        <form id="contact-form" class="glass-panel p-8 rounded-xl border border-white/10 space-y-6">
+                            <div class="grid grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-sm font-medium text-gray-300">Name</label>
+                                    <input type="text" required class="w-full bg-black/50 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-volcano-red focus:ring-1 focus:ring-volcano-red transition-all">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm font-medium text-gray-300">Company</label>
+                                    <input type="text" required class="w-full bg-black/50 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-volcano-red focus:ring-1 focus:ring-volcano-red transition-all">
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium text-gray-300">Corporate Email</label>
+                                <input type="email" required class="w-full bg-black/50 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-volcano-red focus:ring-1 focus:ring-volcano-red transition-all">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium text-gray-300">Service Interest</label>
+                                <div class="relative">
+                                    <select class="w-full bg-black/50 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-volcano-red focus:ring-1 focus:ring-volcano-red transition-all appearance-none cursor-pointer">
+                                        <option value="" disabled selected class="bg-dark-gray text-gray-400">Select an option...</option>
+                                        <option value="pt" class="bg-dark-gray text-white py-2">Penetration Testing</option>
+                                        <option value="rt" class="bg-dark-gray text-white py-2">Red Teaming</option>
+                                        <option value="vm" class="bg-dark-gray text-white py-2">Vulnerability Management</option>
+                                        <option value="other" class="bg-dark-gray text-white py-2">Other / General Inquiry</option>
+                                    </select>
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="space-y-2">
+                                <label class="text-sm font-medium text-gray-300">Message</label>
+                                <textarea required rows="4" class="w-full bg-black/50 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-volcano-red focus:ring-1 focus:ring-volcano-red transition-all resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 font-space font-bold text-black bg-volcano-red rounded hover:bg-white transition-colors flex justify-center items-center gap-2">
+                                <span>TRANSMIT REQUEST</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 bg-black pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                <div class="col-span-2">
+                    <a href="#" class="flex items-center gap-3 mb-4">
+                        <span class="font-space font-bold text-xl tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white to-volcano-red">MYSTERY</span>
+                    </a>
+                    <p class="text-gray-400 text-sm max-w-sm mb-6">Elite offensive security and advanced defense strategies. Securing what matters most.</p>
+                    <div class="flex gap-4">
+                        <a href="https://x.com/mystery_offsec" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-volcano-red hover:border-volcano-red transition-colors">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/mystery-offsec/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-volcano-red hover:border-volcano-red transition-colors">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-space font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-volcano-red transition-colors">Penetration Testing</a></li>
+                        <li><a href="#" class="hover:text-volcano-red transition-colors">Red Teaming</a></li>
+                        <li><a href="#" class="hover:text-volcano-red transition-colors">Web App Security</a></li>
+                        <li><a href="#" class="hover:text-volcano-red transition-colors">Vulnerability Mgmt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-space font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-volcano-red transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-volcano-red transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-volcano-red transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-volcano-red transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-500">&copy; 2026 MYSTERY Security. All rights reserved.</p>
+                <div class="flex items-center gap-2 text-xs font-mono text-gray-500">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    ALL SYSTEMS NOMINAL
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

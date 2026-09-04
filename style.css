@@ -1,29 +1,61 @@
-/* Base Custom Styles */
+/* Base Custom Styles & Smooth Scrolling */
 html {
     scroll-behavior: smooth;
+    color-scheme: dark;
 }
 
 body {
-    cursor: none; /* For custom cursor */
+    cursor: none; /* Custom cursor */
+    background-color: #050505;
+    color: #ffffff;
 }
 
 body.loading {
     overflow: hidden;
 }
 
-/* Custom Selection */
-::selection {
-    background: rgba(255, 36, 0, 0.3);
-    color: white;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+    background: #222;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 36, 0, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ff2400;
+    box-shadow: 0 0 10px rgba(255, 36, 0, 0.8);
 }
 
+/* Custom Selection */
+::selection {
+    background: rgba(255, 36, 0, 0.4);
+    color: #ffffff;
+}
+
+/* Glassmorphism Panels */
 .glass-panel {
-    background-color: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(12px);
+    background: rgba(15, 15, 15, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-glow {
+    background: rgba(18, 18, 18, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 36, 0, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 0 0 15px 0 rgba(255, 36, 0, 0.15);
 }
 
 .bg-hero-pattern {
-    background-size: 50px 50px;
+    background-size: 40px 40px;
+    background-image: radial-gradient(circle at center, rgba(255, 36, 0, 0.15) 1px, transparent 1px);
 }
 
 /* Custom Cursor Styles */
@@ -35,20 +67,37 @@ body.loading {
     border-radius: 50%;
     z-index: 9999;
     pointer-events: none;
-    transition: width 0.2s, height 0.2s, background-color 0.2s;
+    will-change: transform;
 }
 
 .cursor-dot {
     width: 8px;
     height: 8px;
     background-color: #ff2400;
+    box-shadow: 0 0 10px #ff2400, 0 0 20px #ff2400;
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
 }
 
 .cursor-outline {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border: 1px solid rgba(255, 36, 0, 0.5);
-    transition: width 0.2s, height 0.2s, border-color 0.2s;
+    box-shadow: 0 0 15px rgba(255, 36, 0, 0.2);
+    transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+/* Hover States for Cursor */
+.hovering-link .cursor-dot {
+    width: 4px;
+    height: 4px;
+    background-color: #ffffff;
+}
+
+.hovering-link .cursor-outline {
+    width: 52px;
+    height: 52px;
+    border-color: #ff2400;
+    background-color: rgba(255, 36, 0, 0.12);
 }
 
 .magnetic-hover .cursor-dot {
@@ -57,10 +106,11 @@ body.loading {
 }
 
 .magnetic-hover .cursor-outline {
-    width: 60px;
-    height: 60px;
-    background-color: rgba(255, 36, 0, 0.1);
+    width: 64px;
+    height: 64px;
+    background-color: rgba(255, 36, 0, 0.15);
     border-color: #ff2400;
+    box-shadow: 0 0 25px rgba(255, 36, 0, 0.4);
 }
 
 /* Cyber Glitch Effect for Preloader */
@@ -81,14 +131,14 @@ body.loading {
 
 .cyber-glitch-text::before {
     left: 2px;
-    text-shadow: -1px 0 red;
+    text-shadow: -2px 0 #ff2400;
     animation: glitch-anim-1 2s infinite linear alternate-reverse;
 }
 
 .cyber-glitch-text::after {
     left: -2px;
-    text-shadow: -1px 0 yellow;
-    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+    text-shadow: 2px 0 #00ffff;
+    animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
 }
 
 @keyframes glitch-anim-1 {
@@ -109,34 +159,128 @@ body.loading {
     100% { clip-path: inset(50% 0 30% 0); }
 }
 
-/* Scroll Reveal Animations */
+/* Scroll Reveal Animations with smooth cubic-bezier */
 .reveal-up {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(35px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-left {
     opacity: 0;
-    transform: translateX(-40px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateX(-35px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-right {
     opacity: 0;
-    transform: translateX(40px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateX(35px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal-up.active,
 .reveal-left.active,
 .reveal-right.active {
     opacity: 1;
-    transform: translate(0);
+    transform: translate(0, 0);
 }
 
 /* 3D Tilt Card */
 .tilt-card {
     transform-style: preserve-3d;
     transform: perspective(1000px);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
+
+.tilt-card:hover {
+    box-shadow: 0 20px 40px -15px rgba(255, 36, 0, 0.25);
+}
+
+/* Pulse Glow Keyframe */
+@keyframes red-glow-pulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(255, 36, 0, 0.3), inset 0 0 15px rgba(255, 36, 0, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 35px rgba(255, 36, 0, 0.6), inset 0 0 25px rgba(255, 36, 0, 0.3);
+    }
+}
+
+.glow-pulse {
+    animation: red-glow-pulse 4s infinite ease-in-out;
+}
+
+/* Floating animation */
+@keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+.animate-float-slow {
+    animation: float-slow 7s ease-in-out infinite;
+}
+
+/* Service Card Active Filter Transition */
+.service-card {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card.hidden-card {
+    opacity: 0;
+    transform: scale(0.92);
+    pointer-events: none;
+    position: absolute;
+    visibility: hidden;
+}
+
+/* Active Navlink styling */
+.nav-link.active-nav {
+    color: #ff2400;
+}
+.nav-link.active-nav::after {
+    width: 100% !important;
+}
+
+/* Smooth modal overlay */
+.modal-backdrop {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.modal-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+.modal-content {
+    transform: scale(0.95) translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.modal-backdrop.active .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+/* Lenis Smooth Scroll CSS Rules */
+html.lenis, html.lenis body {
+    height: auto;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+/* Hardware Acceleration & Ultra-Smooth Performance */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.glass-panel, .glass-panel-glow, .tilt-card {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+

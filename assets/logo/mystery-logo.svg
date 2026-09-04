@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 44" fill="none">
   <!-- Icon mark: hexagon + crosshair -->
-  <path d="M22 2L38.5 11.5V30.5L22 40L5.5 30.5V11.5L22 2Z" stroke="#e63e28" stroke-width="1.8"/>
-  <circle cx="22" cy="21" r="5.5" stroke="#e63e28" stroke-width="1.6"/>
-  <line x1="22" y1="14.5" x2="22" y2="9" stroke="#e63e28" stroke-width="1.6" stroke-linecap="round"/>
-  <line x1="22" y1="27.5" x2="22" y2="33" stroke="#e63e28" stroke-width="1.6" stroke-linecap="round"/>
-  <line x1="15.5" y1="21" x2="10" y2="21" stroke="#e63e28" stroke-width="1.6" stroke-linecap="round"/>
-  <line x1="28.5" y1="21" x2="34" y2="21" stroke="#e63e28" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M22 2L38.5 11.5V30.5L22 40L5.5 30.5V11.5L22 2Z" stroke="#ffffff" stroke-width="1.8"/>
+  <circle cx="22" cy="21" r="5.5" stroke="#ffffff" stroke-width="1.6"/>
+  <line x1="22" y1="14.5" x2="22" y2="9" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="22" y1="27.5" x2="22" y2="33" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="15.5" y1="21" x2="10" y2="21" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="28.5" y1="21" x2="34" y2="21" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/>
   <!-- Wordmark -->
   <text x="52" y="27" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="18" letter-spacing="2" fill="#ffffff">MYSTERY</text>
 </svg>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Security Research & Blog — MYSTERY</title>
-    <meta name="description" content="Technical offensive security write-ups, vulnerability research, exploit analysis, and red team strategies by MYSTERY.">
+    <meta name="description" content="Technical offensive security write-ups, vulnerability research, and exploit analysis by MYSTERY.">
     <link rel="icon" type="image/svg+xml" href="../../assets/logo/mystery-icon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,7 +13,7 @@
             darkMode: 'class',
             theme: {
                 extend: {
-                    colors: { 'volcano-red': '#e63e28', 'card-dark': '#0d0d0f', 'bg-dark': '#070708' },
+                    colors: { 'volcano-red': '#f4f4f4', 'card-dark': '#0d0d0f', 'bg-dark': '#070708' },
                     fontFamily: { 'space': ['Space Grotesk', 'sans-serif'], 'mono': ['JetBrains Mono', 'monospace'], 'sans': ['Inter', 'sans-serif'] }
                 }
             }
@@ -60,9 +60,9 @@
                 <!-- Article 1 -->
                 <article class="surface p-6 rounded-2xl flex flex-col justify-between">
                     <div>
-                        <div class="text-xs font-mono text-volcano-red mb-2">WEB SECURITY // SSRF</div>
-                        <h2 class="text-xl font-space font-bold text-white mb-3">Anatomy of a Cloud Metadata SSRF Bypass</h2>
-                        <p class="text-xs text-gray-400 leading-relaxed mb-6">A deep dive into how DNS rebinding and URL parser differentials allow bypassing IMDS protection controls in cloud environments.</p>
+                        <div class="text-xs font-mono text-volcano-red mb-2">WEB SECURITY · SSRF</div>
+                        <h2 class="text-xl font-space font-bold text-white mb-3">Anatomy of an SSRF Bypass</h2>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">A deep dive into how DNS rebinding and URL parser differentials can bypass server-side request protections.</p>
                     </div>
                     <div class="pt-4 border-t border-white/10 flex justify-between items-center text-[11px] font-mono text-gray-500">
                         <span>MYSTERY Research</span>
@@ -73,7 +73,7 @@
                 <!-- Article 2 -->
                 <article class="surface p-6 rounded-2xl flex flex-col justify-between">
                     <div>
-                        <div class="text-xs font-mono text-volcano-red mb-2">API SECURITY // AUTH</div>
+                        <div class="text-xs font-mono text-volcano-red mb-2">API SECURITY · AUTH</div>
                         <h2 class="text-xl font-space font-bold text-white mb-3">JWT Vulnerabilities Beyond Alg: None</h2>
                         <p class="text-xs text-gray-400 leading-relaxed mb-6">Exploring Key ID (kid) injection, JWKS spoofing, and asymmetric vs symmetric signature confusion vulnerabilities in production API gateways.</p>
                     </div>
@@ -86,7 +86,7 @@
                 <!-- Article 3 -->
                 <article class="surface p-6 rounded-2xl flex flex-col justify-between">
                     <div>
-                        <div class="text-xs font-mono text-volcano-red mb-2">RED TEAM // EVASION</div>
+                        <div class="text-xs font-mono text-volcano-red mb-2">NETWORK SECURITY · EVASION</div>
                         <h2 class="text-xl font-space font-bold text-white mb-3">Practical AMSI & ETW Bypass Techniques</h2>
                         <p class="text-xs text-gray-400 leading-relaxed mb-6">Understanding in-memory patching of Antimalware Scan Interface (AMSI) and Event Tracing for Windows (ETW) during adversary simulations.</p>
                     </div>

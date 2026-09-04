@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Certifications — MYSTERY</title>
+    <meta name="description" content="Recognized professional offensive security certifications held by MYSTERY researchers: OSCP, CRTO, OSEP, eWPTX, and more.">
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/mystery-icon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { 'volcano-red': '#e63e28', 'card-dark': '#0d0d0f', 'bg-dark': '#070708' },
+                    fontFamily: { 'space': ['Space Grotesk', 'sans-serif'], 'mono': ['JetBrains Mono', 'monospace'], 'sans': ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-[#070708] text-gray-100 antialiased">
+
+    <!-- Header Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-[#070708]/90 backdrop-blur-md border-b border-white/10 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3">
+                <img src="../assets/logo/mystery-logo.svg" alt="MYSTERY Logo" class="h-8 w-auto">
+            </a>
+            <nav class="hidden lg:flex items-center gap-6 glass px-6 py-2 rounded-full text-sm font-medium">
+                <a href="../index.html" class="hover:text-volcano-red">Home</a>
+                <a href="../services/index.html" class="hover:text-volcano-red">Services</a>
+                <a href="../pricing.html" class="hover:text-volcano-red">Pricing</a>
+                <a href="about.html" class="text-volcano-red">Company</a>
+                <a href="../resources/index.html" class="hover:text-volcano-red">Resources</a>
+                <a href="../contact.html" class="hover:text-volcano-red">Contact</a>
+            </nav>
+            <a href="../contact.html" class="btn-primary hidden lg:inline-flex">Request Pentest</a>
+        </div>
+    </header>
+
+    <main class="page-hero">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="breadcrumb mb-6">
+                <a href="../index.html">HOME</a> <span>/</span> <a href="about.html">COMPANY</a> <span>/</span> <span>CERTIFICATIONS</span>
+            </div>
+
+            <div class="max-w-3xl mb-16">
+                <div class="tag mb-4">VERIFIED TECHNICAL CREDENTIALS</div>
+                <h1 class="text-5xl font-space font-bold text-white mb-6">Team Certifications</h1>
+                <p class="text-lg text-gray-300 font-light leading-relaxed">
+                    Our security team holds hands-on, practical offensive security certifications recognized globally by enterprise security organizations.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- OSCP -->
+                <div class="surface p-6 rounded-xl">
+                    <div class="text-xs font-mono text-volcano-red mb-2">OFFSEC CERTIFIED PROFESSIONAL</div>
+                    <h3 class="text-xl font-space font-bold text-white mb-2">OSCP</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-4">Hands-on 24-hour practical penetration testing examination proving real-world network compromise capabilities.</p>
+                    <div class="text-[11px] font-mono text-gray-500">Issuer: OffSec</div>
+                </div>
+
+                <!-- CRTO -->
+                <div class="surface p-6 rounded-xl">
+                    <div class="text-xs font-mono text-volcano-red mb-2">CERTIFIED RED TEAM OPERATOR</div>
+                    <h3 class="text-xl font-space font-bold text-white mb-2">CRTO</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-4">Advanced Active Directory compromise, Cobalt Strike C2 operations, and defense evasion.</p>
+                    <div class="text-[11px] font-mono text-gray-500">Issuer: Zero-Point Security</div>
+                </div>
+
+                <!-- eWPTX -->
+                <div class="surface p-6 rounded-xl">
+                    <div class="text-xs font-mono text-volcano-red mb-2">WEB APPLICATION PENTESTING EXTREME</div>
+                    <h3 class="text-xl font-space font-bold text-white mb-2">eWPTXv2</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-4">Advanced web application vulnerability analysis, WAF bypass, and complex exploit chaining.</p>
+                    <div class="text-[11px] font-mono text-gray-500">Issuer: INE Security</div>
+                </div>
+
+                <!-- OSEP -->
+                <div class="surface p-6 rounded-xl">
+                    <div class="text-xs font-mono text-volcano-red mb-2">OFFSEC EXPERT EXPERIENCED PENETRATOR</div>
+                    <h3 class="text-xl font-space font-bold text-white mb-2">OSEP</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-4">Advanced evasion techniques, antivirus bypass, and breach simulation against hardened targets.</p>
+                    <div class="text-[11px] font-mono text-gray-500">Issuer: OffSec</div>
+                </div>
+
+                <!-- BSCP -->
+                <div class="surface p-6 rounded-xl">
+                    <div class="text-xs font-mono text-volcano-red mb-2">BURP SUITE CERTIFIED PRACTITIONER</div>
+                    <h3 class="text-xl font-space font-bold text-white mb-2">BSCP</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-4">Rigorous hands-on web security examination covering complex web vulnerabilities and logic flaws.</p>
+                    <div class="text-[11px] font-mono text-gray-500">Issuer: PortSwigger</div>
+                </div>
+
+                <!-- eMAPT -->
+                <div class="surface p-6 rounded-xl">
+                    <div class="text-xs font-mono text-volcano-red mb-2">MOBILE APPLICATION PENTESTER</div>
+                    <h3 class="text-xl font-space font-bold text-white mb-2">eMAPT</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-4">Practical mobile security assessment certification covering Android and iOS binary reversing.</p>
+                    <div class="text-[11px] font-mono text-gray-500">Issuer: INE Security</div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#070708] border-t border-white/10 py-12 text-center text-xs text-gray-500 font-mono">
+        © 2026 MYSTERY Offensive Security Labs.
+    </footer>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

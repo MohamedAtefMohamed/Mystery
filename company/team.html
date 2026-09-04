@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Researchers & Team — MYSTERY</title>
+    <meta name="description" content="Meet the offensive security researchers, penetration testers, and exploit specialists behind MYSTERY Security.">
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/mystery-icon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { 'volcano-red': '#e63e28', 'card-dark': '#0d0d0f', 'bg-dark': '#070708' },
+                    fontFamily: { 'space': ['Space Grotesk', 'sans-serif'], 'mono': ['JetBrains Mono', 'monospace'], 'sans': ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-[#070708] text-gray-100 antialiased">
+
+    <!-- Header Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-[#070708]/90 backdrop-blur-md border-b border-white/10 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3">
+                <img src="../assets/logo/mystery-logo.svg" alt="MYSTERY Logo" class="h-8 w-auto">
+            </a>
+            <nav class="hidden lg:flex items-center gap-6 glass px-6 py-2 rounded-full text-sm font-medium">
+                <a href="../index.html" class="hover:text-volcano-red">Home</a>
+                <a href="../services/index.html" class="hover:text-volcano-red">Services</a>
+                <a href="../pricing.html" class="hover:text-volcano-red">Pricing</a>
+                <a href="about.html" class="text-volcano-red">Company</a>
+                <a href="../resources/index.html" class="hover:text-volcano-red">Resources</a>
+                <a href="../contact.html" class="hover:text-volcano-red">Contact</a>
+            </nav>
+            <a href="../contact.html" class="btn-primary hidden lg:inline-flex">Request Pentest</a>
+        </div>
+    </header>
+
+    <main class="page-hero">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="breadcrumb mb-6">
+                <a href="../index.html">HOME</a> <span>/</span> <a href="about.html">COMPANY</a> <span>/</span> <span>TEAM</span>
+            </div>
+
+            <div class="max-w-3xl mb-16">
+                <div class="tag mb-4">OUR RESEARCH COLLECTIVE</div>
+                <h1 class="text-5xl font-space font-bold text-white mb-6">Offensive Security Specialists</h1>
+                <p class="text-lg text-gray-300 font-light leading-relaxed">
+                    MYSTERY is driven by security researchers, red team operators, and bug bounty hunters dedicated to offensive security research and manual vulnerability discovery.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Researcher Card 1 -->
+                <div class="surface p-6 rounded-2xl">
+                    <div class="w-16 h-16 rounded-xl bg-volcano-red/10 border border-volcano-red/30 flex items-center justify-center text-volcano-red text-2xl font-space font-bold mb-4">
+                        M
+                    </div>
+                    <h3 class="text-xl font-space font-bold text-white mb-1">Lead Offensive Researcher</h3>
+                    <div class="text-xs font-mono text-volcano-red mb-3">// WEB & API SECURITY SPECIALIST</div>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-4">Specializing in deep business logic flaws, OAuth/JWT authorization bypasses, and cloud infrastructure security.</p>
+                    <div class="flex flex-wrap gap-2 text-[10px] font-mono text-gray-300">
+                        <span class="px-2 py-1 bg-black/50 border border-white/10 rounded">OSCP</span>
+                        <span class="px-2 py-1 bg-black/50 border border-white/10 rounded">eWPTXv2</span>
+                        <span class="px-2 py-1 bg-black/50 border border-white/10 rounded">CRTO</span>
+                    </div>
+                </div>
+
+                <!-- Researcher Card 2 -->
+                <div class="surface p-6 rounded-2xl">
+                    <div class="w-16 h-16 rounded-xl bg-volcano-red/10 border border-volcano-red/30 flex items-center justify-center text-volcano-red text-2xl font-space font-bold mb-4">
+                        S
+                    </div>
+                    <h3 class="text-xl font-space font-bold text-white mb-1">Red Team Lead</h3>
+                    <div class="text-xs font-mono text-volcano-red mb-3">// ADVERSARY SIMULATION & C2</div>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-4">Expert in EDR evasion, custom C2 framework development, Active Directory domain escalation, and initial access vectors.</p>
+                    <div class="flex flex-wrap gap-2 text-[10px] font-mono text-gray-300">
+                        <span class="px-2 py-1 bg-black/50 border border-white/10 rounded">OSEP</span>
+                        <span class="px-2 py-1 bg-black/50 border border-white/10 rounded">CRTE</span>
+                        <span class="px-2 py-1 bg-black/50 border border-white/10 rounded">GXPN</span>
+                    </div>
+                </div>
+
+                <!-- Researcher Card 3 -->
+                <div class="surface p-6 rounded-2xl">
+                    <div class="w-16 h-16 rounded-xl bg-volcano-red/10 border border-volcano-red/30 flex items-center justify-center text-volcano-red text-2xl font-space font-bold mb-4">
+                        R
+                    </div>
+                    <h3 class="text-xl font-space font-bold text-white mb-1">Mobile & Binary Researcher</h3>
+                    <div class="text-xs font-mono text-volcano-red mb-3">// REVERSE ENGINEERING & MOBILE</div>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-4">Focusing on iOS/Android binary instrumentation (Frida), memory corruption analysis, and secure code review.</p>
+                    <div class="flex flex-wrap gap-2 text-[10px] font-mono text-gray-300">
+                        <span class="px-2 py-1 bg-black/50 border border-white/10 rounded">eMAPT</span>
+                        <span class="px-2 py-1 bg-black/50 border border-white/10 rounded">OSCP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#070708] border-t border-white/10 py-12 text-center text-xs text-gray-500 font-mono">
+        © 2026 MYSTERY Offensive Security Labs.
+    </footer>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

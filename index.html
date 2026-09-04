@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MYSTERY | Offensive Security & Advanced Penetration Testing</title>
-    <meta name="description" content="MYSTERY is an elite offensive security collective specializing in manual penetration testing, red team operations, zero-day research, and threat mitigation. Recognized in the Hall of Fames of Google, Apple, Microsoft, Meta, NASA, SpaceX, and global governments.">
+    <title>MYSTERY — Offensive Security & Manual Penetration Testing</title>
+    <meta name="description" content="MYSTERY is an elite cybersecurity collective offering manual penetration testing, web app pentesting, cloud security assessments, and red team operations.">
+    <link rel="icon" type="image/svg+xml" href="assets/logo/mystery-icon.svg">
     
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -19,14 +20,14 @@
             theme: {
                 extend: {
                     colors: {
-                        'volcano-red': '#ff2400',
-                        'deep-dark': '#050505',
-                        'card-dark': '#0f0f11'
+                        'volcano-red': '#e63e28',
+                        'card-dark': '#0d0d0f',
+                        'bg-dark': '#070708',
                     },
                     fontFamily: {
                         'space': ['Space Grotesk', 'sans-serif'],
-                        'inter': ['Inter', 'sans-serif'],
-                        'mono': ['JetBrains Mono', 'monospace']
+                        'mono': ['JetBrains Mono', 'monospace'],
+                        'sans': ['Inter', 'sans-serif'],
                     }
                 }
             }
@@ -34,600 +35,452 @@
     </script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-[#050505] text-white font-inter overflow-x-hidden">
-    
-    <!-- Minimal Instant Preloader -->
-    <div id="preloader" class="fixed inset-0 z-[9999] bg-[#050505] flex flex-col items-center justify-center transition-opacity duration-300">
-        <div class="flex items-center gap-3">
-            <img src="mystery_logo.png" alt="MYSTERY Logo" class="w-12 h-12 object-contain filter drop-shadow-[0_0_10px_rgba(255,36,0,0.8)]">
-            <span class="font-space font-bold text-2xl tracking-wider text-white">MYSTERY</span>
-        </div>
-    </div>
+<body class="bg-[#070708] text-gray-100 antialiased selection:bg-[#e63e28]/30 selection:text-white">
 
-    <!-- Header Navbar -->
-    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-200 border-b border-white/5 bg-[#050505]/90 backdrop-blur-md px-6 py-3.5">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <!-- Header Navigation -->
+    <header id="navbar" class="fixed w-full top-0 z-50 bg-[#070708]/90 backdrop-blur-md border-b border-white/10 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
             
             <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <img src="mystery_logo.png" alt="MYSTERY Logo" class="w-9 h-9 object-contain filter drop-shadow-[0_0_8px_rgba(255,36,0,0.6)] group-hover:scale-105 transition-transform">
-                <div class="flex flex-col">
-                    <span class="font-space font-bold text-xl tracking-wider text-white">MYSTERY</span>
-                    <span class="text-[9px] font-mono text-volcano-red tracking-widest -mt-1 uppercase opacity-80">Offensive Security</span>
-                </div>
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="assets/logo/mystery-logo.svg" alt="MYSTERY Logo" class="h-8 w-auto">
             </a>
 
-            <!-- Desktop Navigation -->
-            <nav class="hidden md:flex items-center gap-8 glass-panel px-8 py-2.5 rounded-full border border-white/10">
-                <a href="#about" class="nav-link text-sm font-medium text-gray-300 hover:text-volcano-red transition-colors">About</a>
-                <a href="#services" class="nav-link text-sm font-medium text-gray-300 hover:text-volcano-red transition-colors">Services</a>
-                <a href="#why-us" class="nav-link text-sm font-medium text-gray-300 hover:text-volcano-red transition-colors">Why Us</a>
-                <a href="#process" class="nav-link text-sm font-medium text-gray-300 hover:text-volcano-red transition-colors">Process</a>
-                <a href="#contact" class="nav-link text-sm font-medium text-gray-300 hover:text-volcano-red transition-colors">Contact</a>
+            <!-- Desktop Mega Navigation -->
+            <nav class="hidden lg:flex items-center gap-1 glass px-6 py-2 rounded-full">
+                
+                <!-- Services Dropdown -->
+                <div class="relative nav-item px-3 py-1.5">
+                    <button class="nav-trigger flex items-center gap-1.5 text-sm font-medium text-gray-300 hover:text-volcano-red transition-colors" aria-haspopup="true">
+                        <span>Services</span>
+                        <svg class="w-3.5 h-3.5 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="nav-dropdown grid grid-cols-2 gap-3 w-[620px]">
+                        <div>
+                            <div class="text-[11px] font-mono text-volcano-red tracking-wider uppercase mb-2 px-3">// Penetration Testing</div>
+                            <a href="services/web-application-pentest.html" class="dropdown-link">
+                                <div class="dropdown-link-icon">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                                </div>
+                                <div>
+                                    <div class="dropdown-link-title">Web Application Pentest</div>
+                                    <div class="dropdown-link-desc">Deep manual testing for OWASP Top 10 & business logic flaws.</div>
+                                </div>
+                            </a>
+                            <a href="services/api-pentest.html" class="dropdown-link">
+                                <div class="dropdown-link-icon">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                </div>
+                                <div>
+                                    <div class="dropdown-link-title">API Penetration Testing</div>
+                                    <div class="dropdown-link-desc">REST, GraphQL & gRPC authentication and authorization testing.</div>
+                                </div>
+                            </a>
+                            <a href="services/mobile-pentest.html" class="dropdown-link">
+                                <div class="dropdown-link-icon">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                                </div>
+                                <div>
+                                    <div class="dropdown-link-title">Mobile Penetration Testing</div>
+                                    <div class="dropdown-link-desc">iOS & Android client analysis, reverse engineering & API security.</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div>
+                            <div class="text-[11px] font-mono text-volcano-red tracking-wider uppercase mb-2 px-3">// Advanced & Continuous</div>
+                            <a href="services/cloud-pentest.html" class="dropdown-link">
+                                <div class="dropdown-link-icon">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+                                </div>
+                                <div>
+                                    <div class="dropdown-link-title">Cloud Penetration Testing</div>
+                                    <div class="dropdown-link-desc">AWS, Azure & GCP IAM, misconfiguration & container assessments.</div>
+                                </div>
+                            </a>
+                            <a href="services/red-team.html" class="dropdown-link">
+                                <div class="dropdown-link-icon">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                </div>
+                                <div>
+                                    <div class="dropdown-link-title">Red Team Operations</div>
+                                    <div class="dropdown-link-desc">Full-scale adversary simulation and stealth perimeter breach.</div>
+                                </div>
+                            </a>
+                            <a href="services/continuous-pentest.html" class="dropdown-link">
+                                <div class="dropdown-link-icon">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                                </div>
+                                <div>
+                                    <div class="dropdown-link-title">Continuous Pentesting</div>
+                                    <div class="dropdown-link-desc">Year-round offensive coverage for active SDLC pipelines.</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resources Dropdown -->
+                <div class="relative nav-item px-3 py-1.5">
+                    <button class="nav-trigger flex items-center gap-1.5 text-sm font-medium text-gray-300 hover:text-volcano-red transition-colors">
+                        <span>Resources</span>
+                        <svg class="w-3.5 h-3.5 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="nav-dropdown nav-simple-dropdown flex flex-col gap-1 w-56">
+                        <a href="resources/index.html" class="dropdown-link">
+                            <div class="dropdown-link-title">Resource Hub</div>
+                        </a>
+                        <a href="resources/blog/index.html" class="dropdown-link">
+                            <div class="dropdown-link-title">Research & Blog</div>
+                        </a>
+                        <a href="company/hall-of-fame.html" class="dropdown-link">
+                            <div class="dropdown-link-title">Vulnerability Disclosures</div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Company Dropdown -->
+                <div class="relative nav-item px-3 py-1.5">
+                    <button class="nav-trigger flex items-center gap-1.5 text-sm font-medium text-gray-300 hover:text-volcano-red transition-colors">
+                        <span>Company</span>
+                        <svg class="w-3.5 h-3.5 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </button>
+                    <div class="nav-dropdown nav-simple-dropdown flex flex-col gap-1 w-56">
+                        <a href="company/about.html" class="dropdown-link"><div class="dropdown-link-title">About Mystery</div></a>
+                        <a href="company/team.html" class="dropdown-link"><div class="dropdown-link-title">Researchers & Team</div></a>
+                        <a href="company/certifications.html" class="dropdown-link"><div class="dropdown-link-title">Team Certifications</div></a>
+                        <a href="company/hall-of-fame.html" class="dropdown-link"><div class="dropdown-link-title">Hall of Fame</div></a>
+                    </div>
+                </div>
+
+                <a href="pricing.html" class="px-3 py-1.5 text-sm font-medium text-gray-300 hover:text-volcano-red transition-colors">Pricing</a>
+                <a href="contact.html" class="px-3 py-1.5 text-sm font-medium text-gray-300 hover:text-volcano-red transition-colors">Contact</a>
             </nav>
 
-            <!-- CTA Button -->
-            <a href="#contact" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-space font-medium text-white border border-volcano-red/40 rounded-full hover:bg-volcano-red hover:border-volcano-red hover:text-black hover:shadow-[0_0_20px_rgba(255,36,0,0.5)] transition-all">
-                Contact Security
-            </a>
+            <!-- CTA Header Button -->
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="contact.html" class="btn-primary">
+                    <span>Request Pentest</span>
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+            </div>
 
-            <!-- Mobile Menu Toggle Button -->
-            <button id="mobile-menu-btn" class="md:hidden p-2 text-white hover:text-volcano-red focus:outline-none" aria-label="Toggle Navigation">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            <!-- Mobile Hamburger -->
+            <button id="mobile-menu-btn" class="lg:hidden p-2 text-white hover:text-volcano-red focus:outline-none" aria-label="Toggle Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6" class="bar-top transition-transform origin-center"></line>
+                    <line x1="3" y1="12" x2="21" y2="12" class="bar-mid transition-opacity"></line>
+                    <line x1="3" y1="18" x2="21" y2="18" class="bar-bot transition-transform origin-center"></line>
+                </svg>
             </button>
         </div>
 
         <!-- Mobile Drawer -->
-        <div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-[65px] bg-[#0a0a0a]/98 backdrop-blur-2xl border-b border-white/10 p-6 flex-col gap-4 shadow-2xl">
-            <a href="#about" class="text-lg font-space font-medium text-gray-300 hover:text-volcano-red py-2 border-b border-white/5">About</a>
-            <a href="#services" class="text-lg font-space font-medium text-gray-300 hover:text-volcano-red py-2 border-b border-white/5">Services</a>
-            <a href="#why-us" class="text-lg font-space font-medium text-gray-300 hover:text-volcano-red py-2 border-b border-white/5">Why Us</a>
-            <a href="#process" class="text-lg font-space font-medium text-gray-300 hover:text-volcano-red py-2 border-b border-white/5">Process</a>
-            <a href="#contact" class="text-lg font-space font-medium text-volcano-red py-2 flex items-center justify-between">
-                <span>Contact Security</span>
-                <span>→</span>
-            </a>
+        <div id="mobile-nav" class="hidden fixed inset-x-0 top-[72px] bg-[#0d0d0f]/95 backdrop-blur-2xl border-b border-white/10 p-6 flex-col gap-4 max-h-[85vh] overflow-y-auto">
+            <a href="index.html" class="text-lg font-space font-medium text-white py-2 border-b border-white/5">Home</a>
+            <div class="mobile-accordion">
+                <button class="mobile-accordion-btn w-full text-left text-lg font-space font-medium text-gray-300 py-2 border-b border-white/5 flex items-center justify-between">
+                    <span>Services</span>
+                    <span class="accordion-icon text-sm">↓</span>
+                </button>
+                <div class="mobile-accordion-content pl-4 py-2 space-y-2 border-b border-white/5">
+                    <a href="services/web-application-pentest.html" class="block text-sm text-gray-400 py-1">Web Application Pentest</a>
+                    <a href="services/api-pentest.html" class="block text-sm text-gray-400 py-1">API Pentest</a>
+                    <a href="services/mobile-pentest.html" class="block text-sm text-gray-400 py-1">Mobile Pentest</a>
+                    <a href="services/cloud-pentest.html" class="block text-sm text-gray-400 py-1">Cloud Pentest</a>
+                    <a href="services/red-team.html" class="block text-sm text-gray-400 py-1">Red Team Operations</a>
+                    <a href="services/continuous-pentest.html" class="block text-sm text-gray-400 py-1">Continuous Pentesting</a>
+                </div>
+            </div>
+            <a href="pricing.html" class="text-lg font-space font-medium text-gray-300 py-2 border-b border-white/5">Pricing</a>
+            <a href="company/about.html" class="text-lg font-space font-medium text-gray-300 py-2 border-b border-white/5">About</a>
+            <a href="company/team.html" class="text-lg font-space font-medium text-gray-300 py-2 border-b border-white/5">Team & Researchers</a>
+            <a href="company/hall-of-fame.html" class="text-lg font-space font-medium text-gray-300 py-2 border-b border-white/5">Hall of Fame</a>
+            <a href="resources/index.html" class="text-lg font-space font-medium text-gray-300 py-2 border-b border-white/5">Resources</a>
+            <a href="contact.html" class="btn-primary w-full justify-center mt-2">Request Assessment</a>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="relative min-h-[90vh] flex items-center pt-28 pb-16 overflow-hidden">
-            <!-- Subtle Background Grid -->
-            <div class="absolute inset-0 z-0 bg-hero-pattern opacity-20 pointer-events-none"></div>
-            <div class="absolute inset-0 z-0 bg-gradient-to-b from-[#050505]/40 via-[#050505]/80 to-[#050505] pointer-events-none"></div>
-
-            <div class="max-w-7xl mx-auto px-6 relative z-10 w-full grid lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-7">
-                    
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel border border-volcano-red/30 text-xs font-mono text-volcano-red reveal-up">
+        <section class="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden bg-dot-grid">
+            <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
+                <div class="max-w-3xl">
+                    <div class="tag mb-6">
                         <span class="w-2 h-2 rounded-full bg-volcano-red animate-pulse"></span>
                         OFFENSIVE SECURITY & MANUAL PENETRATION TESTING
                     </div>
                     
-                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-space font-bold leading-[1.1] tracking-tight reveal-up">
-                        Securing <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-volcano-red via-red-500 to-white">What Matters</span> Most
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-space font-bold leading-[1.08] tracking-tight mb-8 text-white">
+                        Find the vulnerabilities <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-volcano-red via-red-500 to-white">attackers haven't found yet.</span>
                     </h1>
                     
-                    <p class="text-lg text-gray-300 max-w-2xl font-light leading-relaxed reveal-up">
-                        MYSTERY is an elite cybersecurity collective operating like real threat actors. We protect critical assets from sophisticated enterprise & sovereign adversaries through high-impact manual penetration testing, red teaming, and exploit mitigation.
+                    <p class="text-lg sm:text-xl text-gray-300 font-light leading-relaxed mb-10">
+                        MYSTERY combines elite penetration testers, bug bounty researchers, and exploit specialists to execute manual, high-impact security assessments for web, cloud, and enterprise infrastructure.
                     </p>
                     
-                    <div class="flex flex-wrap gap-4 reveal-up">
-                        <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 font-space font-bold text-black bg-volcano-red rounded-lg hover:bg-white transition-all shadow-lg hover:shadow-[0_0_25px_rgba(255,36,0,0.5)]">
-                            <span class="flex items-center gap-2">
-                                Request Assessment
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                            </span>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="contact.html" class="btn-primary text-base px-8 py-4">
+                            <span>Start a Security Assessment</span>
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                         </a>
-                        <a href="#services" class="inline-flex items-center justify-center px-8 py-4 font-space font-medium text-white glass-panel border border-white/20 rounded-lg hover:border-volcano-red hover:text-volcano-red transition-all">
-                            Explore Services
+                        <a href="services/index.html" class="btn-secondary text-base px-8 py-4">
+                            Explore Our Services
                         </a>
                     </div>
-
-                    <!-- Direct Contact Link -->
-                    <div class="pt-2 flex items-center gap-3 text-xs font-mono text-gray-400 reveal-up">
-                        <span class="text-gray-500">DIRECT INQUIRIES:</span>
-                        <a href="mailto:mystery.security@gmail.com" class="text-volcano-red hover:underline font-bold text-sm">mystery.security@gmail.com</a>
-                    </div>
-                </div>
-
-                <!-- Showcase Logo Badge -->
-                <div class="lg:col-span-5 flex justify-center items-center reveal-right">
-                    <div class="glass-panel-glow p-8 rounded-3xl border border-volcano-red/30 max-w-sm w-full text-center relative">
-                        <div class="w-32 h-32 mx-auto mb-5 flex items-center justify-center relative">
-                            <img src="mystery_logo.png" alt="MYSTERY Emblem" class="w-full h-full object-contain filter drop-shadow-[0_0_18px_rgba(255,36,0,0.8)]">
-                        </div>
-                        
-                        <h3 class="text-2xl font-space font-bold text-white tracking-wider">MYSTERY</h3>
-                        <p class="text-xs font-mono text-volcano-red tracking-widest mt-1 mb-4 uppercase">OFFENSIVE SECURITY LABS</p>
-                        
-                        <div class="grid grid-cols-2 gap-2 pt-4 border-t border-white/10 text-left font-mono text-[11px]">
-                            <div class="bg-black/50 p-2.5 rounded border border-white/5">
-                                <div class="text-gray-500 text-[9px]">METHODOLOGY</div>
-                                <div class="text-white font-bold">100% MANUAL</div>
-                            </div>
-                            <div class="bg-black/50 p-2.5 rounded border border-white/5">
-                                <div class="text-gray-500 text-[9px]">CREDENTIALS</div>
-                                <div class="text-volcano-red font-bold">FORTUNE 500</div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- TEAM HALL OF FAME MARQUEE TICKER (FAANG & Enterprise Leaders) -->
-        <section class="py-8 border-y border-white/10 bg-black/80 relative overflow-hidden">
-            <div class="max-w-7xl mx-auto px-6 mb-4 flex items-center justify-between">
-                <div class="flex items-center gap-2 font-mono text-xs text-volcano-red tracking-wider uppercase font-bold">
-                    <span class="w-2 h-2 rounded-full bg-volcano-red"></span>
-                    TEAM HALL OF FAME & VULNERABILITY RECOGNITION
+        <!-- Trust Stats & Logo Marquee -->
+        <section class="py-12 bg-[#0d0d0f] border-y border-white/10 relative">
+            <div class="max-w-7xl mx-auto px-6 mb-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="p-4 glass rounded-xl">
+                        <div class="text-3xl sm:text-4xl font-space font-bold text-volcano-red" data-count="100" data-suffix="%">0%</div>
+                        <div class="text-xs font-mono text-gray-400 uppercase mt-1 tracking-wider">Manual Penetration Testing</div>
+                    </div>
+                    <div class="p-4 glass rounded-xl">
+                        <div class="text-3xl sm:text-4xl font-space font-bold text-white" data-count="500" data-suffix="+">0+</div>
+                        <div class="text-xs font-mono text-gray-400 uppercase mt-1 tracking-wider">Vulnerabilities Discovered</div>
+                    </div>
+                    <div class="p-4 glass rounded-xl">
+                        <div class="text-3xl sm:text-4xl font-space font-bold text-volcano-red" data-count="48" data-suffix="h">0h</div>
+                        <div class="text-xs font-mono text-gray-400 uppercase mt-1 tracking-wider">Assessment Kickoff Window</div>
+                    </div>
+                    <div class="p-4 glass rounded-xl">
+                        <div class="text-3xl sm:text-4xl font-space font-bold text-white">Zero</div>
+                        <div class="text-xs font-mono text-gray-400 uppercase mt-1 tracking-wider">Automated Scanner Reports</div>
+                    </div>
                 </div>
-                <span class="text-xs font-mono text-gray-400">FAANG • AEROSPACE • AI • GOVERNMENTS</span>
             </div>
 
-            <!-- Infinite Marquee Track -->
-            <div class="relative w-full overflow-hidden py-2">
-                <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#050505] to-transparent z-10"></div>
-                <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#050505] to-transparent z-10"></div>
-
-                <div class="animate-marquee-continuous flex items-center gap-8">
-                    <!-- Repeated block 1 -->
-                    <div class="flex items-center gap-8 shrink-0">
-                        <!-- Meta -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6 text-blue-500" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-3.3-1.6-6-4.5-6-2.1 0-3.7 1.3-4.5 2.6C12.2 7.3 10.6 6 8.5 6 5.6 6 4 8.7 4 12c0 3.3 1.6 6 4.5 6 2.1 0 3.7-1.3 4.5-2.6 0.8 1.3 2.4 2.6 4.5 2.6 2.9 0 4.5-2.7 4.5-6zm-13.5 4c-1.8 0-2.8-1.5-2.8-4s1-4 2.8-4c1.4 0 2.6 1.1 3.2 2.4-.6 1.4-1.8 5.6-3.2 5.6zm9 0c-1.4 0-2.6-1.1-3.2-2.4.6-1.4 1.8-5.6 3.2-5.6 1.8 0 2.8 1.5 2.8 4s-1 4-2.8 4z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">Meta</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">Bug Bounty</span>
-                        </div>
-
-                        <!-- Microsoft -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6" viewBox="0 0 24 24"><path fill="#f25022" d="M1 1h10v10H1z"/><path fill="#7fba00" d="M13 1h10v10H13z"/><path fill="#00a4ef" d="M1 13h10v10H1z"/><path fill="#ffb900" d="M13 13h10v10H13z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">Microsoft</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">MSRC</span>
-                        </div>
-
-                        <!-- Apple -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.54c.66-.8 1.11-1.92.99-3.04-.96.04-2.12.64-2.8 1.44-.61.71-1.14 1.86-1 2.97 1.08.08 2.16-.57 2.81-1.37z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">Apple</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">Product Security</span>
-                        </div>
-
-                        <!-- Google -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">Google</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">VRP Hall of Fame</span>
-                        </div>
-
-                        <!-- French Government -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6 rounded border border-white/20" viewBox="0 0 24 24"><path fill="#002395" d="M0 0h8v24H0z"/><path fill="#FFFFFF" d="M8 0h8v24H8z"/><path fill="#ED2939" d="M16 0h8v24h-8z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">French Gov</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">ANSSI & Defense</span>
-                        </div>
-
-                        <!-- Tesla -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6 text-red-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5.42L8.5 2.5h7L12 5.42zM12 6.8L3 4.5v1.8l9 4.3 9-4.3V4.5L12 6.8zm-1 5.2v9.5h2V12l-2-.0z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">Tesla</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">Vehicle Security</span>
-                        </div>
-
-                        <!-- NASA -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#0B3D91"/><path d="M3 12c5-4 13-4 18 0-5 4-13 4-18 0z" fill="none" stroke="#FC3D21" stroke-width="1.8"/><text x="12" y="15" font-family="sans-serif" font-weight="900" font-size="7.5" fill="#FFFFFF" text-anchor="middle">NASA</text></svg>
-                            <span class="font-space font-bold text-white text-sm">NASA</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">NASA VDP</span>
-                        </div>
-
-                        <!-- SpaceX -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M2.5 17.5L8 6.5h3L5.5 17.5h-3zm19-11l-8 11h-3l8-11h3zm-9.5 2.5l2.5-2.5h3l-4 4-1.5-1.5z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">SpaceX</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">Starlink & Avionics</span>
-                        </div>
-
-                        <!-- Amazon -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6 text-amber-500" viewBox="0 0 24 24" fill="currentColor"><path d="M13.9 12.8c-1.3.8-2.6 1.2-3.8 1.2-1.9 0-2.8-.9-2.8-2.5 0-2.3 2.1-3.6 5.8-3.6v-.3c0-.9-.5-1.4-1.7-1.4-1.1 0-2.2.4-3.1 1.1l-.8-1.3c1.2-.9 2.7-1.4 4.3-1.4 2.4 0 3.5 1.2 3.5 3.2v4.8c0 1.1.2 1.6.6 2.2h-2c-.3-.4-.4-1-.4-1.6zm-.2-3.4c-2.3 0-3.6.7-3.6 2.1 0 .9.5 1.4 1.4 1.4.9 0 1.8-.4 2.2-1.1v-2.4zm5.8 8.1C16.8 19.3 13.5 20 10.3 20c-4.4 0-8.2-1.6-11.1-4.2l.6-.6c2.7 2.4 6.2 3.9 10.5 3.9 3 0 6.1-.7 8.6-2.1l.6.5zM20 18.8l1.4-.8-2.1-1.3-.7 2.3 1.4-.2z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">Amazon</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">AWS Security</span>
-                        </div>
-
-                        <!-- Oracle -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6 text-red-500" viewBox="0 0 24 24" fill="currentColor"><path d="M16 4H8C3.58 4 0 7.58 0 12s3.58 8 8 8h8c4.42 0 8-3.58 8-8s-3.58-8-8-8zm0 12.5H8c-2.48 0-4.5-2.02-4.5-4.5S5.52 7.5 8 7.5h8c2.48 0 4.5 2.02 4.5 4.5s-2.02 4.5-4.5 4.5z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">Oracle</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">Critical Patch</span>
-                        </div>
-
-                        <!-- MongoDB -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6 text-emerald-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5c-4.5 5.2-6.5 9-6.5 12.2 0 3.7 2.8 6.8 6.5 6.8s6.5-3.1 6.5-6.8c0-3.2-2-7-6.5-12.2zm0 17.5c-2.6 0-4.5-2.1-4.5-4.8 0-2.3 1.5-5.3 4.5-9.3 3 4 4.5 7 4.5 9.3 0 2.7-1.9 4.8-4.5 4.8z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">MongoDB</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">Database Core</span>
-                        </div>
-
-                        <!-- OpenAI -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6 text-emerald-400" viewBox="0 0 24 24" fill="currentColor"><path d="M22.28 9.82a5.98 5.98 0 0 0-.52-4.91 6.05 6.05 0 0 0-6.51-2.9 6.06 6.06 0 0 0-4.64-2.07 6.06 6.06 0 0 0-5.75 4.14 6.05 6.05 0 0 0-4.14 2.99 6.06 6.06 0 0 0 .76 7.15 5.98 5.98 0 0 0 .52 4.91 6.05 6.05 0 0 0 6.51 2.9 6.06 6.06 0 0 0 4.64 2.07 6.06 6.06 0 0 0 5.75-4.14 6.05 6.05 0 0 0 4.14-2.99 6.06 6.06 0 0 0-.76-7.15zM12 15.3a3.3 3.3 0 1 1 3.3-3.3 3.3 3.3 0 0 1-3.3 3.3z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">OpenAI</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">ChatGPT & AI</span>
-                        </div>
-
-                        <!-- Sudan Government -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6 rounded border border-white/20" viewBox="0 0 24 24"><path fill="#007229" d="M0 0h24v8H0z"/><path fill="#FFFFFF" d="M0 8h24v8H0z"/><path fill="#000000" d="M0 16h24v8H0z"/><path fill="#D21034" d="M0 0l9 12-9 12z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">Sudan Gov</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">National Cyber</span>
-                        </div>
-                    </div>
-
-                    <!-- Duplicate for infinite seamless loop -->
-                    <div class="flex items-center gap-8 shrink-0" aria-hidden="true">
-                        <!-- Meta -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6 text-blue-500" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-3.3-1.6-6-4.5-6-2.1 0-3.7 1.3-4.5 2.6C12.2 7.3 10.6 6 8.5 6 5.6 6 4 8.7 4 12c0 3.3 1.6 6 4.5 6 2.1 0 3.7-1.3 4.5-2.6 0.8 1.3 2.4 2.6 4.5 2.6 2.9 0 4.5-2.7 4.5-6zm-13.5 4c-1.8 0-2.8-1.5-2.8-4s1-4 2.8-4c1.4 0 2.6 1.1 3.2 2.4-.6 1.4-1.8 5.6-3.2 5.6zm9 0c-1.4 0-2.6-1.1-3.2-2.4.6-1.4 1.8-5.6 3.2-5.6 1.8 0 2.8 1.5 2.8 4s-1 4-2.8 4z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">Meta</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">Bug Bounty</span>
-                        </div>
-
-                        <!-- Microsoft -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6" viewBox="0 0 24 24"><path fill="#f25022" d="M1 1h10v10H1z"/><path fill="#7fba00" d="M13 1h10v10H13z"/><path fill="#00a4ef" d="M1 13h10v10H1z"/><path fill="#ffb900" d="M13 13h10v10H13z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">Microsoft</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">MSRC</span>
-                        </div>
-
-                        <!-- Apple -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.54c.66-.8 1.11-1.92.99-3.04-.96.04-2.12.64-2.8 1.44-.61.71-1.14 1.86-1 2.97 1.08.08 2.16-.57 2.81-1.37z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">Apple</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">Product Security</span>
-                        </div>
-
-                        <!-- Google -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">Google</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">VRP Hall of Fame</span>
-                        </div>
-
-                        <!-- French Government -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6 rounded border border-white/20" viewBox="0 0 24 24"><path fill="#002395" d="M0 0h8v24H0z"/><path fill="#FFFFFF" d="M8 0h8v24H8z"/><path fill="#ED2939" d="M16 0h8v24h-8z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">French Gov</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">ANSSI & Defense</span>
-                        </div>
-
-                        <!-- Tesla -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6 text-red-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5.42L8.5 2.5h7L12 5.42zM12 6.8L3 4.5v1.8l9 4.3 9-4.3V4.5L12 6.8zm-1 5.2v9.5h2V12l-2-.0z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">Tesla</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">Vehicle Security</span>
-                        </div>
-
-                        <!-- NASA -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#0B3D91"/><path d="M3 12c5-4 13-4 18 0-5 4-13 4-18 0z" fill="none" stroke="#FC3D21" stroke-width="1.8"/><text x="12" y="15" font-family="sans-serif" font-weight="900" font-size="7.5" fill="#FFFFFF" text-anchor="middle">NASA</text></svg>
-                            <span class="font-space font-bold text-white text-sm">NASA</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">NASA VDP</span>
-                        </div>
-
-                        <!-- SpaceX -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M2.5 17.5L8 6.5h3L5.5 17.5h-3zm19-11l-8 11h-3l8-11h3zm-9.5 2.5l2.5-2.5h3l-4 4-1.5-1.5z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">SpaceX</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">Starlink & Avionics</span>
-                        </div>
-
-                        <!-- Amazon -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6 text-amber-500" viewBox="0 0 24 24" fill="currentColor"><path d="M13.9 12.8c-1.3.8-2.6 1.2-3.8 1.2-1.9 0-2.8-.9-2.8-2.5 0-2.3 2.1-3.6 5.8-3.6v-.3c0-.9-.5-1.4-1.7-1.4-1.1 0-2.2.4-3.1 1.1l-.8-1.3c1.2-.9 2.7-1.4 4.3-1.4 2.4 0 3.5 1.2 3.5 3.2v4.8c0 1.1.2 1.6.6 2.2h-2c-.3-.4-.4-1-.4-1.6zm-.2-3.4c-2.3 0-3.6.7-3.6 2.1 0 .9.5 1.4 1.4 1.4.9 0 1.8-.4 2.2-1.1v-2.4zm5.8 8.1C16.8 19.3 13.5 20 10.3 20c-4.4 0-8.2-1.6-11.1-4.2l.6-.6c2.7 2.4 6.2 3.9 10.5 3.9 3 0 6.1-.7 8.6-2.1l.6.5zM20 18.8l1.4-.8-2.1-1.3-.7 2.3 1.4-.2z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">Amazon</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">AWS Security</span>
-                        </div>
-
-                        <!-- Oracle -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6 text-red-500" viewBox="0 0 24 24" fill="currentColor"><path d="M16 4H8C3.58 4 0 7.58 0 12s3.58 8 8 8h8c4.42 0 8-3.58 8-8s-3.58-8-8-8zm0 12.5H8c-2.48 0-4.5-2.02-4.5-4.5S5.52 7.5 8 7.5h8c2.48 0 4.5 2.02 4.5 4.5s-2.02 4.5-4.5 4.5z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">Oracle</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">Critical Patch</span>
-                        </div>
-
-                        <!-- MongoDB -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6 text-emerald-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5c-4.5 5.2-6.5 9-6.5 12.2 0 3.7 2.8 6.8 6.5 6.8s6.5-3.1 6.5-6.8c0-3.2-2-7-6.5-12.2zm0 17.5c-2.6 0-4.5-2.1-4.5-4.8 0-2.3 1.5-5.3 4.5-9.3 3 4 4.5 7 4.5 9.3 0 2.7-1.9 4.8-4.5 4.8z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">MongoDB</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">Database Core</span>
-                        </div>
-
-                        <!-- OpenAI -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6 text-emerald-400" viewBox="0 0 24 24" fill="currentColor"><path d="M22.28 9.82a5.98 5.98 0 0 0-.52-4.91 6.05 6.05 0 0 0-6.51-2.9 6.06 6.06 0 0 0-4.64-2.07 6.06 6.06 0 0 0-5.75 4.14 6.05 6.05 0 0 0-4.14 2.99 6.06 6.06 0 0 0 .76 7.15 5.98 5.98 0 0 0 .52 4.91 6.05 6.05 0 0 0 6.51 2.9 6.06 6.06 0 0 0 4.64 2.07 6.06 6.06 0 0 0 5.75-4.14 6.05 6.05 0 0 0 4.14-2.99 6.06 6.06 0 0 0-.76-7.15zM12 15.3a3.3 3.3 0 1 1 3.3-3.3 3.3 3.3 0 0 1-3.3 3.3z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">OpenAI</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">ChatGPT & AI</span>
-                        </div>
-
-                        <!-- Sudan Government -->
-                        <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-xl border border-white/10 hover:border-volcano-red/40 transition-colors">
-                            <svg class="w-6 h-6 rounded border border-white/20" viewBox="0 0 24 24"><path fill="#007229" d="M0 0h24v8H0z"/><path fill="#FFFFFF" d="M0 8h24v8H0z"/><path fill="#000000" d="M0 16h24v8H0z"/><path fill="#D21034" d="M0 0l9 12-9 12z"/></svg>
-                            <span class="font-space font-bold text-white text-sm">Sudan Gov</span>
-                            <span class="text-[10px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5">National Cyber</span>
-                        </div>
-                    </div>
+            <!-- Ticker Marquee -->
+            <div class="overflow-hidden whitespace-nowrap opacity-75 py-2">
+                <div class="marquee-track flex items-center gap-12 text-sm font-mono text-gray-400">
+                    <span class="flex items-center gap-2"><span class="text-volcano-red">❖</span> WEB APPLICATION PENTESTING</span>
+                    <span class="flex items-center gap-2"><span class="text-volcano-red">❖</span> API SECURITY ASSESSMENTS</span>
+                    <span class="flex items-center gap-2"><span class="text-volcano-red">❖</span> CLOUD ARCHITECTURE TESTING</span>
+                    <span class="flex items-center gap-2"><span class="text-volcano-red">❖</span> RED TEAM ADVERSARY SIMULATION</span>
+                    <span class="flex items-center gap-2"><span class="text-volcano-red">❖</span> CONTINUOUS ATTACK SURFACE MONITORING</span>
+                    <span class="flex items-center gap-2"><span class="text-volcano-red">❖</span> EXPLOIT RESEARCH & DISCLOSURE</span>
+                    <span class="flex items-center gap-2"><span class="text-volcano-red">❖</span> WEB APPLICATION PENTESTING</span>
+                    <span class="flex items-center gap-2"><span class="text-volcano-red">❖</span> API SECURITY ASSESSMENTS</span>
+                    <span class="flex items-center gap-2"><span class="text-volcano-red">❖</span> CLOUD ARCHITECTURE TESTING</span>
+                    <span class="flex items-center gap-2"><span class="text-volcano-red">❖</span> RED TEAM ADVERSARY SIMULATION</span>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-24 relative border-b border-white/5">
-            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6 reveal-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-volcano-red/10 border border-volcano-red/30 font-mono text-xs text-volcano-red">
-                        // DEEPSTRIKE-INSPIRED MANUAL PENTESTING
-                    </div>
-                    <h2 class="text-4xl font-space font-bold text-white leading-tight">
-                        Real Threat Simulation, <br>Not Automated Checkboxes
-                    </h2>
-                    <p class="text-gray-300 leading-relaxed font-light">
-                        Forget automated vulnerability scanners that flood your engineering backlog with false positives. MYSTERY conducts 100% manual offensive security assessments, mimicking state-sponsored actors and sophisticated adversary groups to unearth deep architectural flaws.
-                    </p>
-
-                    <div class="grid sm:grid-cols-2 gap-4 pt-2 font-mono text-xs">
-                        <div class="bg-card-dark p-4 rounded-xl border border-white/10">
-                            <div class="text-volcano-red font-bold text-base mb-1">Manual Exploitation</div>
-                            <div class="text-gray-400">Deep logic flaw identification beyond traditional automated tools.</div>
-                        </div>
-                        <div class="bg-card-dark p-4 rounded-xl border border-white/10">
-                            <div class="text-volcano-red font-bold text-base mb-1">Zero-Day Focus</div>
-                            <div class="text-gray-400">Specialized research into memory corruption, API bypasses & cloud escapes.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-panel p-8 rounded-2xl border border-white/10 reveal-right">
-                    <h3 class="text-xl font-space font-bold text-white mb-4">Core Principles</h3>
-                    <ul class="space-y-4 font-mono text-sm text-gray-300">
-                        <li class="flex items-start gap-3">
-                            <span class="text-volcano-red font-bold">01.</span>
-                            <div><strong class="text-white">Impact-Driven Pentesting:</strong> We focus strictly on vulnerabilities that grant real systemic access or cause material impact.</div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-volcano-red font-bold">02.</span>
-                            <div><strong class="text-white">Free Unlimited Retesting:</strong> We re-audit your deployed patches free of charge to confirm effective remediation.</div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-volcano-red font-bold">03.</span>
-                            <div><strong class="text-white">Compliance Ready:</strong> Reports tailored for SOC 2, ISO 27001, HIPAA, and executive stakeholders.</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="py-24 relative border-b border-white/5">
+        <!-- Primary Services Grid -->
+        <section class="py-24 relative">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto mb-16 reveal-up">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-panel border border-volcano-red/30 text-xs font-mono text-volcano-red mb-3">
-                        OUR OFFENSIVE CAPABILITIES
+                <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                    <div class="section-label">Offensive Services</div>
+                    <h2 class="text-4xl sm:text-5xl font-space font-bold text-white mb-4">Precision Testing for Complex Applications</h2>
+                    <p class="text-gray-400 text-base">Every assessment is driven by real offensive security experts simulating sophisticated threat actors.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Web App -->
+                    <div class="service-card reveal">
+                        <div class="card-icon">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                        </div>
+                        <h3 class="text-xl font-space font-bold text-white mb-2">Web Application Pentest</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6">Deep manual testing uncover business logic vulnerabilities, authorization bypasses, and complex injection flaws that automated tools miss.</p>
+                        <a href="services/web-application-pentest.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Capability →</a>
                     </div>
-                    <h2 class="text-4xl md:text-5xl font-space font-bold mb-4">Comprehensive <span class="text-volcano-red">Security Services</span></h2>
-                    <p class="text-gray-400 text-lg">Tailored penetration testing solutions for high-risk digital infrastructure.</p>
+
+                    <!-- API Pentest -->
+                    <div class="service-card reveal">
+                        <div class="card-icon">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-space font-bold text-white mb-2">API Penetration Testing</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6"> Rigorous security reviews of RESTful APIs, GraphQL endpoints, and microservices for BOLA/IDOR, broken authentication, and rate-limit bypasses.</p>
+                        <a href="services/api-pentest.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Capability →</a>
+                    </div>
+
+                    <!-- Mobile Pentest -->
+                    <div class="service-card reveal">
+                        <div class="card-icon">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                        </div>
+                        <h3 class="text-xl font-space font-bold text-white mb-2">Mobile Application Pentest</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6">Static and dynamic analysis of iOS & Android binaries, IPC channels, local data storage, and backend API integration security.</p>
+                        <a href="services/mobile-pentest.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Capability →</a>
+                    </div>
+
+                    <!-- Cloud Pentest -->
+                    <div class="service-card reveal">
+                        <div class="card-icon">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-space font-bold text-white mb-2">Cloud Security Pentest</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6">Assess IAM policies, serverless logic, Kubernetes clusters, and cloud storage configurations across AWS, Azure, and Google Cloud Platform.</p>
+                        <a href="services/cloud-pentest.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Capability →</a>
+                    </div>
+
+                    <!-- Red Team -->
+                    <div class="service-card reveal">
+                        <div class="card-icon">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-space font-bold text-white mb-2">Red Team Operations</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6">Objective-based adversary simulation testing physical perimeters, blue-team detection latency, internal movement, and domain compromise.</p>
+                        <a href="services/red-team.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Capability →</a>
+                    </div>
+
+                    <!-- Continuous Pentest -->
+                    <div class="service-card reveal">
+                        <div class="card-icon">
+                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                        </div>
+                        <h3 class="text-xl font-space font-bold text-white mb-2">Continuous Pentesting</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6">Continuous offensive testing embedded into your CI/CD pipelines to validate new code releases, feature deployments, and API updates year-round.</p>
+                        <a href="services/continuous-pentest.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Capability →</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Mystery Pillars -->
+        <section class="py-20 bg-[#0d0d0f] border-y border-white/10">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <div class="section-label">The Mystery Advantage</div>
+                    <h2 class="text-4xl font-space font-bold text-white mb-4">Why Security Leaders Choose MYSTERY</h2>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Service 1 -->
-                    <div class="tilt-card p-8 bg-card-dark rounded-2xl border border-white/10 hover:border-volcano-red/40 transition-all flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-volcano-red/10 border border-volcano-red/30 flex items-center justify-center text-volcano-red text-2xl font-bold mb-6">🌐</div>
-                            <h3 class="text-2xl font-space font-bold text-white mb-3">Web & API Pentesting</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-6">Thorough manual security audit of complex web apps, GraphQL, REST APIs, and microservice architectures.</p>
-                        </div>
-                        <ul class="font-mono text-xs text-gray-300 space-y-2 border-t border-white/10 pt-4">
-                            <li>✓ Business Logic Bypass</li>
-                            <li>✓ Authentication & Authorization</li>
-                            <li>✓ Injection & SSRF Research</li>
-                        </ul>
+                    <div class="p-8 surface rounded-2xl">
+                        <div class="text-volcano-red font-mono text-sm mb-3">01 // HUMAN-LED EXCELLENCE</div>
+                        <h3 class="text-xl font-space font-bold text-white mb-3">100% Manual Testing</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Automated scanners produce noise and miss business logic flaws. Every assessment by MYSTERY is executed by hands-on offensive security experts.</p>
                     </div>
 
-                    <!-- Service 2 -->
-                    <div class="tilt-card p-8 bg-card-dark rounded-2xl border border-white/10 hover:border-volcano-red/40 transition-all flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-volcano-red/10 border border-volcano-red/30 flex items-center justify-center text-volcano-red text-2xl font-bold mb-6">⚡</div>
-                            <h3 class="text-2xl font-space font-bold text-white mb-3">Red Team Operations</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-6">Full-scope adversary simulation testing your incident detection, defense team response, and perimeter resilience.</p>
-                        </div>
-                        <ul class="font-mono text-xs text-gray-300 space-y-2 border-t border-white/10 pt-4">
-                            <li>✓ Spear Phishing & Initial Access</li>
-                            <li>✓ Active Directory Escalation</li>
-                            <li>✓ C2 Evasion & Exfiltration</li>
-                        </ul>
+                    <div class="p-8 surface rounded-2xl">
+                        <div class="text-volcano-red font-mono text-sm mb-3">02 // RESEARCH DRIVEN</div>
+                        <h3 class="text-xl font-space font-bold text-white mb-3">Active Vulnerability Researchers</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Our team consists of active bug bounty hunters and exploit researchers who understand modern attack vectors before they are weaponized.</p>
                     </div>
 
-                    <!-- Service 3 -->
-                    <div class="tilt-card p-8 bg-card-dark rounded-2xl border border-white/10 hover:border-volcano-red/40 transition-all flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-volcano-red/10 border border-volcano-red/30 flex items-center justify-center text-volcano-red text-2xl font-bold mb-6">☁️</div>
-                            <h3 class="text-2xl font-space font-bold text-white mb-3">Cloud Security Audits</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-6">In-depth security analysis of AWS, Azure, GCP, Kubernetes clusters, and cloud-native serverless deployments.</p>
-                        </div>
-                        <ul class="font-mono text-xs text-gray-300 space-y-2 border-t border-white/10 pt-4">
-                            <li>✓ IAM Misconfiguration & Privilege Escalation</li>
-                            <li>✓ Container Escape Research</li>
-                            <li>✓ Serverless Logic Vulnerabilities</li>
-                        </ul>
+                    <div class="p-8 surface rounded-2xl">
+                        <div class="text-volcano-red font-mono text-sm mb-3">03 // REMEDIATION FIRST</div>
+                        <h3 class="text-xl font-space font-bold text-white mb-3">Unlimited Retesting Included</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">We don't just hand you a PDF report. We validate your security patches and verify fixes until your infrastructure is provably secure.</p>
                     </div>
-                </div>
-    
                 </div>
             </div>
         </section>
 
-        <!-- Why Us Section -->
-        <section id="why-us" class="py-24 relative border-b border-white/5">
+        <!-- Assessment Lifecycle Methodology -->
+        <section class="py-24 relative">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto mb-16 reveal-up">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-panel border border-volcano-red/30 text-xs font-mono text-volcano-red mb-3">
-                        THE MYSTERY ADVANTAGE
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-space font-bold mb-4">Why Organizations Trust <span class="text-volcano-red">MYSTERY</span></h2>
-                    <p class="text-gray-400 text-lg">Proven methodology, deep vulnerability research, and sovereign-grade expertise.</p>
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <div class="section-label">Assessment Lifecycle</div>
+                    <h2 class="text-4xl font-space font-bold text-white mb-4">Rigorous Methodical Execution</h2>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="p-8 border border-white/10 bg-card-dark rounded-2xl hover:border-volcano-red/40 transition-all">
-                        <div class="w-12 h-12 rounded-xl bg-volcano-red/10 border border-volcano-red/30 flex items-center justify-center text-volcano-red mb-6">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        </div>
-                        <h3 class="text-xl font-space font-bold mb-3 text-white">Elite Security Engineers</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Our team consists of proven exploit developers, bug bounty leaders, and security researchers who have broken Fortune 500 infrastructure.</p>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <div class="p-5 surface rounded-xl text-center">
+                        <div class="text-xs font-mono text-volcano-red mb-2">STAGE 01</div>
+                        <div class="font-space font-bold text-white text-base mb-1">Scoping</div>
+                        <div class="text-xs text-gray-400">Rules of engagement & asset definition.</div>
                     </div>
-
-                    <div class="p-8 border border-white/10 bg-card-dark rounded-2xl hover:border-volcano-red/40 transition-all">
-                        <div class="w-12 h-12 rounded-xl bg-volcano-red/10 border border-volcano-red/30 flex items-center justify-center text-volcano-red mb-6">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                        </div>
-                        <h3 class="text-xl font-space font-bold mb-3 text-white">100% Manual Execution</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">No automated click-and-scan PDFs. Every finding is manually weaponized, verified, and triaged to save your engineers precious time.</p>
+                    <div class="p-5 surface rounded-xl text-center">
+                        <div class="text-xs font-mono text-volcano-red mb-2">STAGE 02</div>
+                        <div class="font-space font-bold text-white text-base mb-1">Reconnaissance</div>
+                        <div class="text-xs text-gray-400">OSINT & attack surface mapping.</div>
                     </div>
-
-                    <div class="p-8 border border-white/10 bg-card-dark rounded-2xl hover:border-volcano-red/40 transition-all">
-                        <div class="w-12 h-12 rounded-xl bg-volcano-red/10 border border-volcano-red/30 flex items-center justify-center text-volcano-red mb-6">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                        </div>
-                        <h3 class="text-xl font-space font-bold mb-3 text-white">Actionable Remediation</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Clear code snippets, proof-of-concept exploits, and step-by-step guidance to patch root vulnerabilities permanently.</p>
+                    <div class="p-5 surface rounded-xl text-center">
+                        <div class="text-xs font-mono text-volcano-red mb-2">STAGE 03</div>
+                        <div class="font-space font-bold text-white text-base mb-1">Analysis</div>
+                        <div class="text-xs text-gray-400">Threat modeling & entry-point discovery.</div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Process Section -->
-        <section id="process" class="py-24 relative border-b border-white/5">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto mb-16 reveal-up">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-panel border border-volcano-red/30 text-xs font-mono text-volcano-red mb-3">
-                        ENGAGEMENT WORKFLOW
+                    <div class="p-5 surface rounded-xl text-center">
+                        <div class="text-xs font-mono text-volcano-red mb-2">STAGE 04</div>
+                        <div class="font-space font-bold text-white text-base mb-1">Exploitation</div>
+                        <div class="text-xs text-gray-400">Safe manual vulnerability validation.</div>
                     </div>
-                    <h2 class="text-4xl md:text-5xl font-space font-bold mb-4">Our Assessment <span class="text-volcano-red">Process</span></h2>
-                    <p class="text-gray-400 text-lg">Streamlined, rigorous, and completely non-disruptive to production.</p>
-                </div>
-
-                <div class="grid md:grid-cols-4 gap-6">
-                    <div class="p-6 bg-card-dark rounded-xl border border-white/10 relative">
-                        <div class="text-3xl font-space font-bold text-volcano-red mb-3">01</div>
-                        <h3 class="text-lg font-space font-bold text-white mb-2">Scope & Rules</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">Establishing target parameters, environment access, and safe testing boundaries.</p>
+                    <div class="p-5 surface rounded-xl text-center">
+                        <div class="text-xs font-mono text-volcano-red mb-2">STAGE 05</div>
+                        <div class="font-space font-bold text-white text-base mb-1">Reporting</div>
+                        <div class="text-xs text-gray-400">Actionable executive & tech reports.</div>
                     </div>
-
-                    <div class="p-6 bg-card-dark rounded-xl border border-white/10 relative">
-                        <div class="text-3xl font-space font-bold text-volcano-red mb-3">02</div>
-                        <h3 class="text-lg font-space font-bold text-white mb-2">Recon & Mapping</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">Deep asset discovery, sub-domain mapping, and technology stack fingerprinting.</p>
-                    </div>
-
-                    <div class="p-6 bg-card-dark rounded-xl border border-white/10 relative">
-                        <div class="text-3xl font-space font-bold text-volcano-red mb-3">03</div>
-                        <h3 class="text-lg font-space font-bold text-white mb-2">Manual Attack</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">In-depth manual exploitation, logic flaw bypasses, and privilege escalation.</p>
-                    </div>
-
-                    <div class="p-6 bg-card-dark rounded-xl border border-white/10 relative">
-                        <div class="text-3xl font-space font-bold text-volcano-red mb-3">04</div>
-                        <h3 class="text-lg font-space font-bold text-white mb-2">Report & Retest</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">Executive reporting, proof-of-concept code, and free unlimited re-testing.</p>
+                    <div class="p-5 surface rounded-xl text-center">
+                        <div class="text-xs font-mono text-volcano-red mb-2">STAGE 06</div>
+                        <div class="font-space font-bold text-white text-base mb-1">Retesting</div>
+                        <div class="text-xs text-gray-400">Verification of deployed fixes.</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-28 relative">
-            <div class="max-w-4xl mx-auto px-6">
-                
-                <div class="glass-panel-glow p-8 sm:p-12 rounded-3xl border border-volcano-red/30 relative">
-                    <div class="text-center mb-10">
-                        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full glass-panel border border-volcano-red/30 text-xs font-mono text-volcano-red mb-3">
-                            SECURE INQUIRY PORTAL
-                        </div>
-                        <h2 class="text-3xl sm:text-4xl font-space font-bold text-white mb-3">Initiate Security Assessment</h2>
-                        <p class="text-gray-300 text-sm sm:text-base">
-                            Send your scope details directly to <strong class="text-volcano-red font-mono">mystery.security@gmail.com</strong>
-                        </p>
-                    </div>
-
-                    <form id="contact-form" action="mailto:mystery.security@gmail.com" method="POST" enctype="text/plain" class="space-y-6">
-                        <div class="grid sm:grid-cols-2 gap-6">
-                            <div>
-                                <label for="contact-name" class="block text-xs font-mono text-gray-300 mb-2">YOUR NAME *</label>
-                                <input type="text" id="contact-name" required placeholder="John Doe" class="w-full bg-black/60 border border-white/15 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-volcano-red transition-colors">
-                            </div>
-                            <div>
-                                <label for="contact-company" class="block text-xs font-mono text-gray-300 mb-2">COMPANY / ORGANIZATION *</label>
-                                <input type="text" id="contact-company" required placeholder="Acme Corp" class="w-full bg-black/60 border border-white/15 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-volcano-red transition-colors">
-                            </div>
-                        </div>
-
-                        <div class="grid sm:grid-cols-2 gap-6">
-                            <div>
-                                <label for="contact-email" class="block text-xs font-mono text-gray-300 mb-2">CORPORATE EMAIL *</label>
-                                <input type="email" id="contact-email" required placeholder="john@company.com" class="w-full bg-black/60 border border-white/15 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-volcano-red transition-colors">
-                            </div>
-                            <div>
-                                <label for="contact-service" class="block text-xs font-mono text-gray-300 mb-2">REQUIRED SERVICE *</label>
-                                <select id="contact-service" class="w-full bg-black/60 border border-white/15 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-volcano-red transition-colors">
-                                    <option value="web-pentest">Web & API Penetration Testing</option>
-                                    <option value="red-team">Red Team Operations</option>
-                                    <option value="cloud-audit">Cloud Security Audit</option>
-                                    <option value="mobile-pentest">Mobile App Security Testing</option>
-                                    <option value="custom">Custom Zero-Day Research</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="contact-message" class="block text-xs font-mono text-gray-300 mb-2">SCOPE & ENGAGEMENT DETAILS *</label>
-                            <textarea id="contact-message" rows="4" required placeholder="Describe target scope, estimated timelines, or specific compliance goals..." class="w-full bg-black/60 border border-white/15 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-volcano-red transition-colors resize-none"></textarea>
-                        </div>
-
-                        <button type="submit" class="w-full py-4 font-space font-bold text-black bg-volcano-red rounded-lg hover:bg-white transition-all text-base shadow-lg hover:shadow-[0_0_30px_rgba(255,36,0,0.6)] flex items-center justify-center gap-2">
-                            <span>Send Email Inquiry (mailto)</span>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                        </button>
-                    </form>
-
-                    <div class="mt-6 text-center text-xs font-mono text-gray-400">
-                        PGP Key available upon request • Guaranteed confidentiality & NDA compliance
-                    </div>
+        <!-- Final CTA -->
+        <section class="py-24 bg-gradient-to-b from-[#070708] to-[#0d0d0f] border-t border-white/10 relative">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <div class="tag mb-6">READY TO ELEVATE YOUR SECURITY POSTURE?</div>
+                <h2 class="text-4xl sm:text-5xl font-space font-bold text-white mb-6">Attack your security before real attackers do.</h2>
+                <p class="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">Get in touch with our offensive security team today for a confidential scoping conversation and custom technical proposal.</p>
+                <div class="flex justify-center gap-4">
+                    <a href="contact.html" class="btn-primary text-base px-8 py-4">Request a Security Assessment</a>
                 </div>
-
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="py-12 border-t border-white/10 bg-black text-xs font-mono text-gray-400 text-center">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-3">
-                <img src="mystery_logo.png" alt="MYSTERY Logo" class="w-6 h-6 object-contain">
-                <span class="font-space font-bold text-white text-sm">MYSTERY SECURITY</span>
+    <footer class="bg-[#070708] border-t border-white/10 py-16 text-sm text-gray-400">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-10">
+            <div class="col-span-2">
+                <a href="index.html" class="inline-block mb-4">
+                    <img src="assets/logo/mystery-logo.svg" alt="MYSTERY Logo" class="h-8 w-auto">
+                </a>
+                <p class="text-xs text-gray-400 max-w-sm mb-6 leading-relaxed">
+                    MYSTERY is a premier offensive security collective providing manual penetration testing, cloud security audits, and adversary simulations for high-growth startups and enterprises.
+                </p>
+                <div class="text-xs font-mono text-volcano-red">Contact: mystery.security@gmail.com</div>
             </div>
             <div>
-                © 2026 MYSTERY Offensive Security Labs. All rights reserved.
+                <h4 class="font-space font-bold text-white text-sm mb-4">Services</h4>
+                <ul class="space-y-2">
+                    <li><a href="services/web-application-pentest.html" class="footer-link">Web Pentest</a></li>
+                    <li><a href="services/api-pentest.html" class="footer-link">API Pentest</a></li>
+                    <li><a href="services/mobile-pentest.html" class="footer-link">Mobile Pentest</a></li>
+                    <li><a href="services/cloud-pentest.html" class="footer-link">Cloud Pentest</a></li>
+                    <li><a href="services/red-team.html" class="footer-link">Red Teaming</a></li>
+                    <li><a href="services/continuous-pentest.html" class="footer-link">Continuous Testing</a></li>
+                </ul>
             </div>
             <div>
-                <a href="mailto:mystery.security@gmail.com" class="text-volcano-red hover:underline">mystery.security@gmail.com</a>
+                <h4 class="font-space font-bold text-white text-sm mb-4">Company</h4>
+                <ul class="space-y-2">
+                    <li><a href="company/about.html" class="footer-link">About Mystery</a></li>
+                    <li><a href="company/team.html" class="footer-link">Our Researchers</a></li>
+                    <li><a href="company/certifications.html" class="footer-link">Certifications</a></li>
+                    <li><a href="company/hall-of-fame.html" class="footer-link">Hall of Fame</a></li>
+                    <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+                </ul>
             </div>
+            <div>
+                <h4 class="font-space font-bold text-white text-sm mb-4">Legal</h4>
+                <ul class="space-y-2">
+                    <li><a href="legal/privacy.html" class="footer-link">Privacy Policy</a></li>
+                    <li><a href="legal/terms.html" class="footer-link">Terms of Service</a></li>
+                    <li><a href="legal/responsible-disclosure.html" class="footer-link">Responsible Disclosure</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between text-xs text-gray-500 font-mono">
+            <div>© 2026 MYSTERY Offensive Security Labs. All rights reserved.</div>
+            <div>High-Impact Manual Security Research</div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

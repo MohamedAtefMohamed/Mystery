@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Contact MYSTERY — Request a Security Assessment</title>
     <meta name="description" content="Contact MYSTERY Security Team for web, API, mobile, and network penetration testing inquiries.">
     <link rel="icon" type="image/svg+xml" href="assets/logo/mystery-icon.svg">
+=======
+    <title>Contact Security Experts — MYSTERY</title>
+    <meta name="description" content="Contact MYSTERY offensive security experts. Request a penetration testing proposal or scope custom security operations.">
+    <link rel="icon" type="image/png" href="assets/logo/mystery-fedora-icon.png">
+>>>>>>> 52d21ea (style & refactor: integrate new brand logo, remove generic AI badges, polish professional UX)
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -26,8 +32,9 @@
     <!-- Header Navigation -->
     <header class="fixed w-full top-0 z-50 bg-[#070708]/90 backdrop-blur-md border-b border-white/10 px-6 py-4">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-3">
-                <img src="assets/logo/mystery-logo.svg" alt="MYSTERY Logo" class="h-8 w-auto">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="assets/logo/mystery-fedora-icon.png" alt="MYSTERY Logo" class="h-9 w-auto rounded-md group-hover:scale-105 transition-transform">
+                <span class="font-space font-bold text-xl tracking-wider text-white">MYSTERY</span>
             </a>
             <nav class="hidden lg:flex items-center gap-6 glass px-6 py-2 rounded-full text-sm font-medium">
                 <a href="index.html" class="hover:text-volcano-red">Home</a>
@@ -45,76 +52,79 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid lg:grid-cols-12 gap-12 items-start">
                 
+                <!-- Contact Form Information -->
                 <div class="lg:col-span-5 space-y-6">
-                    <div class="tag">DIRECT SECURITY ENGAGEMENT</div>
-                    <h1 class="text-5xl font-space font-bold text-white leading-tight">Initiate an Assessment</h1>
-                    <p class="text-gray-300 text-base leading-relaxed">
-                        Ready to test your systems against real adversary tactics? Fill out the form or reach out directly via PGP encrypted email.
+                    <h1 class="text-4xl sm:text-5xl font-space font-bold text-white leading-tight">Start Your Security Assessment</h1>
+                    <p class="text-gray-300 font-light leading-relaxed">
+                        Ready to evaluate your attack surface? Tell us about your project requirements and our lead security team will respond within 24 hours.
                     </p>
 
-                    <div class="surface p-6 rounded-2xl space-y-4 text-sm font-mono">
+                    <div class="surface p-6 rounded-xl space-y-4 text-sm border border-white/10">
                         <div>
-                            <div class="text-xs text-gray-400 uppercase">Direct Email</div>
-                            <div class="text-volcano-red font-bold text-base mt-0.5">mystery.security@gmail.com</div>
+                            <div class="text-xs font-mono text-gray-400 uppercase">Direct Email</div>
+                            <a href="mailto:mystery.security@gmail.com" class="text-volcano-red font-mono text-base hover:underline">mystery.security@gmail.com</a>
                         </div>
                         <div>
-                            <div class="text-xs text-gray-400 uppercase">Response SLA</div>
-                            <div class="text-white mt-0.5">Under 24 Hours Guaranteed</div>
-                        </div>
-                        <div>
-                            <div class="text-xs text-gray-400 uppercase">PGP Key ID</div>
-                            <div class="text-gray-300 text-xs mt-0.5">0x4F8A2B9C1E3D5F7A (Available on request)</div>
+                            <div class="text-xs font-mono text-gray-400 uppercase">Response SLA</div>
+                            <div class="text-gray-200">Within 24 business hours</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Contact Form -->
-                <div class="lg:col-span-7">
-                    <form id="contact-form" class="surface p-8 rounded-2xl space-y-6">
-                        <h2 class="text-2xl font-space font-bold text-white mb-2">Request Security Proposal</h2>
-                        
+                <!-- Inquiry Form -->
+                <div class="lg:col-span-7 surface p-8 rounded-2xl">
+                    <form id="contact-form" class="space-y-6">
                         <div class="grid sm:grid-cols-2 gap-6">
                             <div>
-                                <label for="cf-name" class="block text-xs font-mono text-gray-300 uppercase mb-2">Your Name *</label>
-                                <input type="text" id="cf-name" required placeholder="Alex Mercer" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-volcano-red focus:outline-none text-sm">
+                                <label class="block text-xs font-medium text-gray-300 mb-2">Your Name</label>
+                                <input type="text" id="cf-name" required placeholder="Alex Mercer" class="w-full bg-[#070708] border border-white/15 rounded-lg px-4 py-3 text-sm text-white focus:border-volcano-red focus:outline-none">
                             </div>
                             <div>
-                                <label for="cf-company" class="block text-xs font-mono text-gray-300 uppercase mb-2">Company / Organization *</label>
-                                <input type="text" id="cf-company" required placeholder="Acme Corp" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-volcano-red focus:outline-none text-sm">
+                                <label class="block text-xs font-medium text-gray-300 mb-2">Company / Organization</label>
+                                <input type="text" id="cf-company" required placeholder="Acme Security Labs" class="w-full bg-[#070708] border border-white/15 rounded-lg px-4 py-3 text-sm text-white focus:border-volcano-red focus:outline-none">
                             </div>
                         </div>
 
                         <div class="grid sm:grid-cols-2 gap-6">
                             <div>
-                                <label for="cf-email" class="block text-xs font-mono text-gray-300 uppercase mb-2">Corporate Email *</label>
-                                <input type="email" id="cf-email" required placeholder="alex@acme.com" class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-volcano-red focus:outline-none text-sm">
+                                <label class="block text-xs font-medium text-gray-300 mb-2">Work Email</label>
+                                <input type="email" id="cf-email" required placeholder="alex@company.com" class="w-full bg-[#070708] border border-white/15 rounded-lg px-4 py-3 text-sm text-white focus:border-volcano-red focus:outline-none">
                             </div>
                             <div>
-                                <label for="cf-service" class="block text-xs font-mono text-gray-300 uppercase mb-2">Primary Service *</label>
-                                <select id="cf-service" required class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-volcano-red focus:outline-none text-sm">
+                                <label class="block text-xs font-medium text-gray-300 mb-2">Service of Interest</label>
+                                <select id="cf-service" class="w-full bg-[#070708] border border-white/15 rounded-lg px-4 py-3 text-sm text-white focus:border-volcano-red focus:outline-none">
                                     <option value="Web Application Pentest">Web Application Pentest</option>
+<<<<<<< HEAD
                                     <option value="API Pentest">API Pentest</option>
                                     <option value="Mobile Pentest">Mobile Pentest</option>
+=======
+                                    <option value="API Penetration Testing">API Penetration Testing</option>
+                                    <option value="Mobile Penetration Testing">Mobile Penetration Testing</option>
+                                    <option value="Cloud Security Assessment">Cloud Security Assessment</option>
+                                    <option value="Red Team Operations">Red Team Operations</option>
+                                    <option value="Continuous Pentest Subscription">Continuous Pentest Subscription</option>
+>>>>>>> 52d21ea (style & refactor: integrate new brand logo, remove generic AI badges, polish professional UX)
                                 </select>
                             </div>
                         </div>
 
                         <div>
-                            <label for="cf-message" class="block text-xs font-mono text-gray-300 uppercase mb-2">Scope Details / Scope Overview</label>
-                            <textarea id="cf-message" rows="4" placeholder="Tell us about your target application, API endpoints, timeline, or compliance deadlines..." class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-600 focus:border-volcano-red focus:outline-none text-sm"></textarea>
+                            <label class="block text-xs font-medium text-gray-300 mb-2">Scope & Project Overview</label>
+                            <textarea id="cf-message" rows="5" required placeholder="Describe target web applications, APIs, timelines, or compliance goals..." class="w-full bg-[#070708] border border-white/15 rounded-lg px-4 py-3 text-sm text-white focus:border-volcano-red focus:outline-none"></textarea>
                         </div>
 
-                        <button type="submit" class="btn-primary w-full justify-center text-base py-3.5">
-                            Submit Security Assessment Request →
+                        <button type="submit" class="btn-primary w-full justify-center text-base py-4">
+                            <span>Submit Security Request</span>
                         </button>
                     </form>
                 </div>
+
             </div>
         </div>
     </main>
 
     <footer class="bg-[#070708] border-t border-white/10 py-12 text-center text-xs text-gray-500 font-mono">
-        © 2026 MYSTERY Offensive Security Labs.
+        © 2026 MYSTERY Security Labs. All rights reserved.
     </footer>
     <script src="assets/js/main.js"></script>
 </body>

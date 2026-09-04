@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Penetration Testing & Offensive Security Services — MYSTERY</title>
     <meta name="description" content="Focused offensive security services by MYSTERY: Web, API, Mobile, and Network penetration testing.">
     <link rel="icon" type="image/svg+xml" href="../assets/logo/mystery-icon.svg">
+=======
+    <title>Offensive Security Services — MYSTERY</title>
+    <meta name="description" content="Explore MYSTERY offensive security services: Web Pentesting, API Audits, Mobile Security, Cloud Audits, and Red Team operations.">
+    <link rel="icon" type="image/png" href="../assets/logo/mystery-fedora-icon.png">
+>>>>>>> 52d21ea (style & refactor: integrate new brand logo, remove generic AI badges, polish professional UX)
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -26,8 +32,9 @@
     <!-- Header Navigation -->
     <header class="fixed w-full top-0 z-50 bg-[#070708]/90 backdrop-blur-md border-b border-white/10 px-6 py-4">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <a href="../index.html" class="flex items-center gap-3">
-                <img src="../assets/logo/mystery-logo.svg" alt="MYSTERY Logo" class="h-8 w-auto">
+            <a href="../index.html" class="flex items-center gap-3 group">
+                <img src="../assets/logo/mystery-fedora-icon.png" alt="MYSTERY Logo" class="h-9 w-auto rounded-md group-hover:scale-105 transition-transform">
+                <span class="font-space font-bold text-xl tracking-wider text-white">MYSTERY</span>
             </a>
             <nav class="hidden lg:flex items-center gap-6 glass px-6 py-2 rounded-full text-sm font-medium">
                 <a href="../index.html" class="hover:text-volcano-red">Home</a>
@@ -43,46 +50,64 @@
 
     <main class="page-hero">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="breadcrumb mb-6">
-                <a href="../index.html">HOME</a> <span>/</span> <span>SERVICES</span>
+            <div class="max-w-3xl mb-16">
+                <h1 class="text-5xl font-space font-bold text-white mb-6">Offensive Security Services</h1>
+                <p class="text-lg text-gray-300 font-light leading-relaxed">
+                    Customized security assessments executed by senior threat researchers to protect your critical applications and infrastructure.
+                </p>
             </div>
-            
-            <h1 class="text-5xl font-space font-bold text-white mb-6">Offensive Security Capabilities</h1>
-            <p class="text-lg text-gray-300 max-w-3xl font-light mb-16 leading-relaxed">
-                MYSTERY delivers manual, research-backed penetration testing and adversary simulation. We identify critical vulnerabilities across your entire digital attack surface before real-world threat actors exploit them.
-            </p>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Web -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
                 <div class="service-card">
-                    <h3 class="text-2xl font-space font-bold text-white mb-3">Web Application Pentest</h3>
-                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Thorough manual testing targeting OWASP Top 10, complex business logic flaws, race conditions, IDOR, and privilege escalations.</p>
-                    <a href="web-application-pentest.html" class="btn-secondary text-xs">View Capability & Methodology →</a>
+                    <h3 class="text-xl font-space font-bold text-white mb-2">Web Application Pentest</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-6">Manual testing targeting OWASP Top 10, authorization bypasses, and business logic flaws.</p>
+                    <a href="web-application-pentest.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Service →</a>
                 </div>
-                <!-- API -->
+
                 <div class="service-card">
-                    <h3 class="text-2xl font-space font-bold text-white mb-3">API Penetration Testing</h3>
-                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Deep analysis of REST, GraphQL, and gRPC endpoints to uncover authentication vulnerabilities, broken object level authorization (BOLA), and data leakage.</p>
-                    <a href="api-pentest.html" class="btn-secondary text-xs">View Capability & Methodology →</a>
+                    <h3 class="text-xl font-space font-bold text-white mb-2">API Security Assessment</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-6">Security testing for REST, GraphQL, and microservices endpoints covering BOLA/IDOR.</p>
+                    <a href="api-pentest.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Service →</a>
                 </div>
-                <!-- Mobile -->
+
                 <div class="service-card">
-                    <h3 class="text-2xl font-space font-bold text-white mb-3">Mobile Pentest (iOS & Android)</h3>
-                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Reverse engineering of mobile binaries, static/dynamic runtime manipulation, local storage inspection, and SSL pinning bypasses.</p>
-                    <a href="mobile-pentest.html" class="btn-secondary text-xs">View Capability & Methodology →</a>
+                    <h3 class="text-xl font-space font-bold text-white mb-2">Mobile Application Pentest</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-6">iOS & Android binary analysis, local data security, and API backend integration testing.</p>
+                    <a href="mobile-pentest.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Service →</a>
                 </div>
+<<<<<<< HEAD
                 <!-- Network -->
+=======
+
                 <div class="service-card">
-                    <h3 class="text-2xl font-space font-bold text-white mb-3">Network Infrastructure Pentest</h3>
-                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">External and internal network testing uncovering legacy protocol weaknesses, firewall bypasses, Active Directory flaws, and unpatched systems.</p>
-                    <a href="network-pentest.html" class="btn-secondary text-xs">View Capability & Methodology →</a>
+                    <h3 class="text-xl font-space font-bold text-white mb-2">Cloud Security Audit</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-6">AWS, Azure & GCP IAM permissions, container security, and bucket misconfigurations.</p>
+                    <a href="cloud-pentest.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Service →</a>
                 </div>
+
+>>>>>>> 52d21ea (style & refactor: integrate new brand logo, remove generic AI badges, polish professional UX)
+                <div class="service-card">
+                    <h3 class="text-xl font-space font-bold text-white mb-2">Red Team Operations</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-6">Full-scale objective simulation testing detection response and internal perimeter resilience.</p>
+                    <a href="red-team.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Service →</a>
+                </div>
+<<<<<<< HEAD
+=======
+
+                <div class="service-card">
+                    <h3 class="text-xl font-space font-bold text-white mb-2">Continuous Pentesting</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-6">Year-round offensive coverage for active development teams and frequent release pipelines.</p>
+                    <a href="continuous-pentest.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Service →</a>
+                </div>
+
+>>>>>>> 52d21ea (style & refactor: integrate new brand logo, remove generic AI badges, polish professional UX)
             </div>
         </div>
     </main>
 
     <footer class="bg-[#070708] border-t border-white/10 py-12 text-center text-xs text-gray-500 font-mono">
-        © 2026 MYSTERY Offensive Security Labs.
+        © 2026 MYSTERY Security Labs. All rights reserved.
     </footer>
     <script src="../assets/js/main.js"></script>
 </body>

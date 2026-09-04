@@ -55,9 +55,9 @@ body {
 /* ---- Nav Dropdown ---- */
 .nav-dropdown {
   position: absolute;
-  top: calc(100% + 12px);
+  top: 100%;
   left: 50%;
-  transform: translateX(-50%) translateY(-6px);
+  transform: translateX(-50%) translateY(8px);
   background: var(--bg2);
   border: 1px solid var(--border-strong);
   border-radius: 14px;
@@ -66,9 +66,18 @@ body {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
   z-index: 200;
   box-shadow: 0 16px 48px rgba(0,0,0,0.6);
+  margin-top: 4px;
+}
+.nav-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 0;
+  right: 0;
+  height: 16px;
 }
 .nav-item:hover .nav-dropdown,
 .nav-dropdown.open {

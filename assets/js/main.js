@@ -17,23 +17,24 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ---- Navigation Dropdowns ---- */
 function initNav() {
   const navItems = document.querySelectorAll('.nav-item');
-  let closeTimer = null;
 
   navItems.forEach(item => {
     const dropdown = item.querySelector('.nav-dropdown');
     if (!dropdown) return;
+    let timer = null;
 
     item.addEventListener('mouseenter', () => {
-      clearTimeout(closeTimer);
+      clearTimeout(timer);
+      dropdown.classList.add('open');
     });
 
     item.addEventListener('mouseleave', () => {
-      closeTimer = setTimeout(() => {
-        // handled by CSS :hover, just here for safety
-      }, 100);
+      timer = setTimeout(() => {
+        dropdown.classList.remove('open');
+      }, 150);
     });
 
-    // Keyboard
+    // Keyboard navigation
     const trigger = item.querySelector('.nav-trigger');
     if (trigger) {
       trigger.addEventListener('keydown', e => {

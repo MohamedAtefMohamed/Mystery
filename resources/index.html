@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Security Resources & Research Hub — MYSTERY</title>
     <meta name="description" content="Offensive security research articles, penetration testing methodology guides, and technical security resources by MYSTERY.">
-    <link rel="icon" type="image/png" href="../assets/logo/mystery-fedora-icon.png">
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/mystery-icon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -26,9 +26,8 @@
     <!-- Header Navigation -->
     <header class="fixed w-full top-0 z-50 bg-[#070708]/90 backdrop-blur-md border-b border-white/10 px-6 py-4">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <a href="../index.html" class="flex items-center gap-3 group">
-                <img src="../assets/logo/mystery-fedora-icon.png" alt="MYSTERY Logo" class="h-9 w-auto rounded-md group-hover:scale-105 transition-transform">
-                <span class="font-space font-bold text-xl tracking-wider text-white">MYSTERY</span>
+            <a href="../index.html" class="flex items-center gap-3">
+                <img src="../assets/logo/mystery-logo.svg" alt="MYSTERY Logo" class="h-8 w-auto">
             </a>
             <nav class="hidden lg:flex items-center gap-6 glass px-6 py-2 rounded-full text-sm font-medium">
                 <a href="../index.html" class="hover:text-volcano-red">Home</a>
@@ -44,16 +43,20 @@
 
     <main class="page-hero">
         <div class="max-w-7xl mx-auto px-6">
+            <div class="breadcrumb mb-6">
+                <a href="../index.html">HOME</a> <span>/</span> <span>RESOURCES</span>
+            </div>
+
             <div class="max-w-3xl mb-16">
-                <h1 class="text-5xl font-space font-bold text-white mb-6">Resource & Research Hub</h1>
+                <div class="tag mb-4">SECURITY RESEARCH & INSIGHTS</div>
+                <h1 class="text-5xl font-space font-bold text-white mb-6">Resource Hub</h1>
                 <p class="text-lg text-gray-300 font-light leading-relaxed">
-                    Technical write-ups, vulnerability analysis, and security research published by the MYSTERY security team.
+                    Technical write-ups, security research, vulnerability analysis, and penetration testing guidance directly from the MYSTERY research team.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 mb-16">
                 <a href="blog/index.html" class="surface p-8 rounded-2xl hover:border-volcano-red/40 transition-colors block group">
-<<<<<<< HEAD
                     <div class="text-xs font-mono text-volcano-red mb-2">SECURITY RESEARCH & BLOG</div>
                     <h2 class="text-2xl font-space font-bold text-white group-hover:text-volcano-red transition-colors mb-3">Technical Research Write-Ups →</h2>
                     <p class="text-gray-400 text-sm leading-relaxed">Deep-dive technical write-ups covering SSRF vectors, GraphQL vulnerabilities, BOLA/IDOR exploitation, and practical application security.</p>
@@ -61,22 +64,15 @@
 
                 <a href="../company/hall-of-fame.html" class="surface p-8 rounded-2xl hover:border-volcano-red/40 transition-colors block group">
                     <div class="text-xs font-mono text-volcano-red mb-2">RESPONSIBLE DISCLOSURE</div>
-=======
-                    <h2 class="text-2xl font-space font-bold text-white group-hover:text-volcano-red transition-colors mb-3">Technical Research Write-Ups →</h2>
-                    <p class="text-gray-400 text-sm leading-relaxed">Deep-dive technical articles covering SSRF vectors, GraphQL vulnerabilities, BOLA/IDOR exploitation, and evasion strategies.</p>
-                </a>
-
-                <a href="../company/hall-of-fame.html" class="surface p-8 rounded-2xl hover:border-volcano-red/40 transition-colors block group">
->>>>>>> 52d21ea (style & refactor: integrate new brand logo, remove generic AI badges, polish professional UX)
                     <h2 class="text-2xl font-space font-bold text-white group-hover:text-volcano-red transition-colors mb-3">Vulnerability Disclosures →</h2>
-                    <p class="text-gray-400 text-sm leading-relaxed">Overview of public security advisories and coordinated disclosure contributions.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed">Overview of public disclosures, vendor advisories, and ethical security research acknowledgements.</p>
                 </a>
             </div>
         </div>
     </main>
 
     <footer class="bg-[#070708] border-t border-white/10 py-12 text-center text-xs text-gray-500 font-mono">
-        © 2026 MYSTERY Security Labs. All rights reserved.
+        © 2026 MYSTERY Offensive Security Labs.
     </footer>
     <script src="../assets/js/main.js"></script>
 </body>

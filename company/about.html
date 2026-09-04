@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About MYSTERY — Offensive Security Collective</title>
-    <meta name="description" content="Learn about MYSTERY, an offensive security collective delivering manual vulnerability assessments, penetration testing, and exploit research.">
-    <link rel="icon" type="image/png" href="../assets/logo/mystery-fedora-icon.png">
+    <meta name="description" content="Learn about MYSTERY: an elite cybersecurity collective of vulnerability researchers, penetration testers, and bug bounty specialists.">
+    <link rel="icon" type="image/svg+xml" href="../assets/logo/mystery-icon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -26,9 +26,8 @@
     <!-- Header Navigation -->
     <header class="fixed w-full top-0 z-50 bg-[#070708]/90 backdrop-blur-md border-b border-white/10 px-6 py-4">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <a href="../index.html" class="flex items-center gap-3 group">
-                <img src="../assets/logo/mystery-fedora-icon.png" alt="MYSTERY Logo" class="h-9 w-auto rounded-md group-hover:scale-105 transition-transform">
-                <span class="font-space font-bold text-xl tracking-wider text-white">MYSTERY</span>
+            <a href="../index.html" class="flex items-center gap-3">
+                <img src="../assets/logo/mystery-logo.svg" alt="MYSTERY Logo" class="h-8 w-auto">
             </a>
             <nav class="hidden lg:flex items-center gap-6 glass px-6 py-2 rounded-full text-sm font-medium">
                 <a href="../index.html" class="hover:text-volcano-red">Home</a>
@@ -44,14 +43,18 @@
 
     <main class="page-hero">
         <div class="max-w-7xl mx-auto px-6">
+            <div class="breadcrumb mb-6">
+                <a href="../index.html">HOME</a> <span>/</span> <a href="about.html">COMPANY</a> <span>/</span> <span>ABOUT MYSTERY</span>
+            </div>
+
             <div class="max-w-3xl mb-16">
-                <h1 class="text-5xl font-space font-bold text-white mb-6">About MYSTERY</h1>
-                <p class="text-xl text-gray-300 font-light leading-relaxed">
-                    MYSTERY is a specialized security collective founded by penetration testers and vulnerability researchers committed to deep manual security testing.
+                <div class="tag mb-4">OUR MISSION & PHILOSOPHY</div>
+                <h1 class="text-5xl font-space font-bold text-white mb-6">Real-World Threat Actors for Your Defense</h1>
+                <p class="text-lg text-gray-300 font-light leading-relaxed">
+                    MYSTERY was founded on a simple principle: compliance checklists don't stop determined attackers. Only researchers who actively break software can effectively defend it.
                 </p>
             </div>
 
-<<<<<<< HEAD
             <div class="grid md:grid-cols-2 gap-8 mb-16">
                 <div class="surface p-8 rounded-2xl">
                     <h2 class="text-2xl font-space font-bold text-white mb-4">Research-Driven Approach</h2>
@@ -61,25 +64,23 @@
                     <p class="text-gray-300 text-sm leading-relaxed">
                         When you work with MYSTERY, that exact research mindset is applied directly to your web apps, mobile clients, APIs, and internal networks.
                     </p>
-=======
-            <div class="grid lg:grid-cols-12 gap-12 items-center mb-20">
-                <div class="lg:col-span-6 space-y-6 text-gray-300 text-sm leading-relaxed">
-                    <h2 class="text-2xl font-space font-bold text-white">Our Security Philosophy</h2>
-                    <p>Modern applications are increasingly complex, built with cloud-native frameworks, microservices, and rapid deployment pipelines. Automated vulnerability scanners only scrape the surface—missing critical logic flaws and complex multi-step attack vectors.</p>
-                    <p>At MYSTERY, we simulate real threat actors by combining hands-on technical manual analysis, custom security tooling, and continuous vulnerability research to uncover impactful flaws before malicious actors can exploit them.</p>
->>>>>>> 52d21ea (style & refactor: integrate new brand logo, remove generic AI badges, polish professional UX)
                 </div>
-                <div class="lg:col-span-6">
-                    <div class="rounded-2xl overflow-hidden border border-white/15 bg-black/60 shadow-2xl">
-                        <img src="../assets/logo/mystery-brand.png" alt="MYSTERY Brand Identity" class="w-full h-auto">
-                    </div>
+
+                <div class="surface p-8 rounded-2xl">
+                    <h2 class="text-2xl font-space font-bold text-white mb-4">Why We Reject Scanners</h2>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                        Automated tools test static patterns. They cannot understand multi-step business logic, privilege escalation chains, or state-machine vulnerabilities.
+                    </p>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Every finding reported by MYSTERY is manually identified, validated with a clean Proof of Concept (PoC), and triaged to guarantee zero false positives.
+                    </p>
                 </div>
             </div>
         </div>
     </main>
 
     <footer class="bg-[#070708] border-t border-white/10 py-12 text-center text-xs text-gray-500 font-mono">
-        © 2026 MYSTERY Security Labs. All rights reserved.
+        © 2026 MYSTERY Offensive Security Labs.
     </footer>
     <script src="../assets/js/main.js"></script>
 </body>

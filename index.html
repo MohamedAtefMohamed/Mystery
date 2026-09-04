@@ -3,15 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <title>MYSTERY — Offensive Security & Manual Penetration Testing</title>
     <meta name="description" content="MYSTERY is an elite cybersecurity collective offering manual web, API, mobile, and network penetration testing.">
     <link rel="icon" type="image/svg+xml" href="assets/logo/mystery-icon.svg">
-=======
-    <title>MYSTERY — Offensive Security & Vulnerability Research</title>
-    <meta name="description" content="MYSTERY is a specialized security collective delivering manual penetration testing, cloud security audits, and red team adversary simulations.">
-    <link rel="icon" type="image/png" href="assets/logo/mystery-fedora-icon.png">
->>>>>>> 52d21ea (style & refactor: integrate new brand logo, remove generic AI badges, polish professional UX)
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,8 +43,7 @@
             
             <!-- Brand Logo -->
             <a href="index.html" class="flex items-center gap-3 group">
-                <img src="assets/logo/mystery-fedora-icon.png" alt="MYSTERY Logo" class="h-9 w-auto rounded-md group-hover:scale-105 transition-transform">
-                <span class="font-space font-bold text-xl tracking-wider text-white">MYSTERY</span>
+                <img src="assets/logo/mystery-logo.svg" alt="MYSTERY Logo" class="h-8 w-auto">
             </a>
 
             <!-- Desktop Mega Navigation -->
@@ -64,18 +57,14 @@
                     </button>
                     <div class="nav-dropdown grid grid-cols-2 gap-3 w-[620px]">
                         <div>
-<<<<<<< HEAD
                             <div class="text-[11px] font-mono text-volcano-red tracking-wider uppercase mb-2 px-3">Penetration Testing</div>
-=======
-                            <div class="text-xs font-semibold text-gray-400 mb-2 px-3">Security Assessments</div>
->>>>>>> 52d21ea (style & refactor: integrate new brand logo, remove generic AI badges, polish professional UX)
                             <a href="services/web-application-pentest.html" class="dropdown-link">
                                 <div class="dropdown-link-icon">
                                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
                                 </div>
                                 <div>
                                     <div class="dropdown-link-title">Web Application Pentest</div>
-                                    <div class="dropdown-link-desc">Targeted manual testing for OWASP Top 10 & business logic flaws.</div>
+                                    <div class="dropdown-link-desc">Deep manual testing for OWASP Top 10 & business logic flaws.</div>
                                 </div>
                             </a>
                             <a href="services/api-pentest.html" class="dropdown-link">
@@ -84,7 +73,7 @@
                                 </div>
                                 <div>
                                     <div class="dropdown-link-title">API Penetration Testing</div>
-                                    <div class="dropdown-link-desc">REST, GraphQL & gRPC authentication & authorization security.</div>
+                                    <div class="dropdown-link-desc">REST, GraphQL & gRPC authentication and authorization testing.</div>
                                 </div>
                             </a>
                             <a href="services/mobile-pentest.html" class="dropdown-link">
@@ -93,44 +82,13 @@
                                 </div>
                                 <div>
                                     <div class="dropdown-link-title">Mobile Penetration Testing</div>
-                                    <div class="dropdown-link-desc">iOS & Android static/dynamic analysis & binary security.</div>
+                                    <div class="dropdown-link-desc">iOS & Android client analysis, reverse engineering & API security.</div>
                                 </div>
                             </a>
                         </div>
                         <div>
-<<<<<<< HEAD
                             <div class="text-[11px] font-mono text-volcano-red tracking-wider uppercase mb-2 px-3">Core Assessments</div>
                             <a href="services/network-pentest.html" class="dropdown-link"><div class="dropdown-link-icon">↗</div><div><div class="dropdown-link-title">Network Penetration Testing</div><div class="dropdown-link-desc">External and internal infrastructure testing for exposed attack paths.</div></div></a>
-=======
-                            <div class="text-xs font-semibold text-gray-400 mb-2 px-3">Advanced Operations</div>
-                            <a href="services/cloud-pentest.html" class="dropdown-link">
-                                <div class="dropdown-link-icon">
-                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
-                                </div>
-                                <div>
-                                    <div class="dropdown-link-title">Cloud Pentesting</div>
-                                    <div class="dropdown-link-desc">AWS, Azure & GCP IAM policy & container security audits.</div>
-                                </div>
-                            </a>
-                            <a href="services/red-team.html" class="dropdown-link">
-                                <div class="dropdown-link-icon">
-                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                                </div>
-                                <div>
-                                    <div class="dropdown-link-title">Red Team Operations</div>
-                                    <div class="dropdown-link-desc">Stealth adversary simulation & perimeter defense testing.</div>
-                                </div>
-                            </a>
-                            <a href="services/continuous-pentest.html" class="dropdown-link">
-                                <div class="dropdown-link-icon">
-                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-                                </div>
-                                <div>
-                                    <div class="dropdown-link-title">Continuous Pentesting</div>
-                                    <div class="dropdown-link-desc">Year-round offensive coverage for active development pipelines.</div>
-                                </div>
-                            </a>
->>>>>>> 52d21ea (style & refactor: integrate new brand logo, remove generic AI badges, polish professional UX)
                         </div>
                     </div>
                 </div>
@@ -146,10 +104,10 @@
                             <div class="dropdown-link-title">Resource Hub</div>
                         </a>
                         <a href="resources/blog/index.html" class="dropdown-link">
-                            <div class="dropdown-link-title">Research & Articles</div>
+                            <div class="dropdown-link-title">Research & Blog</div>
                         </a>
                         <a href="company/hall-of-fame.html" class="dropdown-link">
-                            <div class="dropdown-link-title">Disclosures</div>
+                            <div class="dropdown-link-title">Vulnerability Disclosures</div>
                         </a>
                     </div>
                 </div>
@@ -163,7 +121,7 @@
                     <div class="nav-dropdown nav-simple-dropdown flex flex-col gap-1 w-56">
                         <a href="company/about.html" class="dropdown-link"><div class="dropdown-link-title">About Mystery</div></a>
                         <a href="company/team.html" class="dropdown-link"><div class="dropdown-link-title">Researchers & Team</div></a>
-                        <a href="company/certifications.html" class="dropdown-link"><div class="dropdown-link-title">Certifications</div></a>
+                        <a href="company/certifications.html" class="dropdown-link"><div class="dropdown-link-title">Team Certifications</div></a>
                         <a href="company/hall-of-fame.html" class="dropdown-link"><div class="dropdown-link-title">Hall of Fame</div></a>
                     </div>
                 </div>
@@ -215,7 +173,6 @@
     </header>
 
     <main>
-<<<<<<< HEAD
         <!-- Hero Section -->
         <section class="hero-command relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden bg-dot-grid">
             <div class="hero-scanline"></div>
@@ -230,76 +187,11 @@
                     <div class="assessment-console reveal-right" aria-label="Live assessment console">
                         <div class="console-top"><span class="console-dots"><i></i><i></i><i></i></span><span class="font-mono text-[10px] text-gray-500">MYSTERY / LIVE ENGAGEMENT</span><span class="console-live"><i></i> ACTIVE</span></div>
                         <div class="console-body"><div class="console-heading"><div><span class="section-label">Assessment stream</span><h2>Northstar / customer portal</h2></div><span class="console-id">MS-042</span></div><div class="console-meter"><div><span>ATTACK SURFACE MAPPED</span><b>82%</b></div><span class="meter-track"><i></i></span></div><div class="console-findings"><div class="console-row"><span class="console-severity critical">CRITICAL</span><div><strong>Object-level authorization</strong><small>Invoice API · /v1/invoices/{id}</small></div><span class="row-check">!</span></div><div class="console-row"><span class="console-severity high">HIGH</span><div><strong>Reset flow enumeration</strong><small>Identity service · POST /reset</small></div><span class="row-check">!</span></div><div class="console-row resolved"><span class="console-severity fixed">FIXED</span><div><strong>Verbose stack trace</strong><small>Retest verified · 18 min ago</small></div><span class="row-check">✓</span></div></div><div class="console-footer"><span><i class="status-beacon"></i> Researcher online</span><span>Next update <b>02:14</b></span></div></div>
-=======
-        <!-- Hero Section featuring Custom Brand Artwork -->
-        <section class="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden bg-dot-grid">
-            <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
-                <div class="grid lg:grid-cols-12 gap-12 items-center">
-                    
-                    <!-- Hero Content -->
-                    <div class="lg:col-span-7 space-y-8">
-                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-gray-300">
-                            <span class="w-2 h-2 rounded-full bg-volcano-red animate-pulse"></span>
-                            <span>OFFENSIVE SECURITY COLLECTIVE</span>
-                        </div>
-                        
-                        <h1 class="text-5xl sm:text-6xl font-space font-bold leading-[1.08] tracking-tight text-white">
-                            Think like an attacker.<br>
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-volcano-red via-red-500 to-white">Defend like a leader.</span>
-                        </h1>
-                        
-                        <p class="text-lg text-gray-300 font-light leading-relaxed max-w-xl">
-                            MYSTERY brings together security researchers and exploit specialists to execute manual, high-impact security assessments across web, cloud, and enterprise infrastructure.
-                        </p>
-                        
-                        <div class="flex flex-wrap gap-4 pt-2">
-                            <a href="contact.html" class="btn-primary text-base px-8 py-4">
-                                <span>Start Security Assessment</span>
-                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                            </a>
-                            <a href="services/index.html" class="btn-secondary text-base px-8 py-4">
-                                View Capabilities
-                            </a>
-                        </div>
-
-                        <!-- Key Metrics -->
-                        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10">
-                            <div>
-                                <div class="text-2xl font-space font-bold text-volcano-red" data-count="100" data-suffix="%">0%</div>
-                                <div class="text-xs text-gray-400 mt-0.5">Manual Testing</div>
-                            </div>
-                            <div>
-                                <div class="text-2xl font-space font-bold text-white" data-count="500" data-suffix="+">0+</div>
-                                <div class="text-xs text-gray-400 mt-0.5">Flaws Identified</div>
-                            </div>
-                            <div>
-                                <div class="text-2xl font-space font-bold text-volcano-red" data-count="48" data-suffix="h">0h</div>
-                                <div class="text-xs text-gray-400 mt-0.5">Kickoff SLA</div>
-                            </div>
-                        </div>
                     </div>
-
-                    <!-- Hero Visual Card (User's Custom Brand Image) -->
-                    <div class="lg:col-span-5">
-                        <div class="relative group rounded-2xl overflow-hidden border border-white/15 bg-black/60 shadow-2xl shadow-volcano-red/10 transition-transform duration-300 hover:scale-[1.01]">
-                            <img src="assets/logo/mystery-brand.png" alt="MYSTERY Security Cyber Operations" class="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity">
-                            <div class="absolute inset-0 bg-gradient-to-t from-[#070708] via-transparent to-transparent opacity-80"></div>
-                            <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between text-xs font-mono text-gray-300 glass px-4 py-3 rounded-xl">
-                                <span class="flex items-center gap-2">
-                                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                                    SYSTEM SAFEGUARD ACTIVE
-                                </span>
-                                <span class="text-volcano-red font-semibold">MYSTERY SECURITY</span>
-                            </div>
-                        </div>
->>>>>>> 52d21ea (style & refactor: integrate new brand logo, remove generic AI badges, polish professional UX)
-                    </div>
-
                 </div>
             </div>
         </section>
 
-<<<<<<< HEAD
         <!-- Trust Stats & Logo Marquee -->
         <section class="py-12 bg-[#0d0d0f] border-y border-white/10 relative">
             <div class="max-w-7xl mx-auto px-6 mb-8">
@@ -352,14 +244,12 @@
         </section>
 
         <!-- Primary Services Grid -->
-=======
-        <!-- Service Offerings -->
->>>>>>> 52d21ea (style & refactor: integrate new brand logo, remove generic AI badges, polish professional UX)
         <section class="py-24 relative">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="max-w-2xl mb-16 reveal">
-                    <h2 class="text-3xl sm:text-4xl font-space font-bold text-white mb-4">Targeted Offensive Capabilities</h2>
-                    <p class="text-gray-400 text-base">Security assessments tailored to your stack, executed by dedicated threat researchers.</p>
+                <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                    <div class="section-label">Offensive Services</div>
+                    <h2 class="text-4xl sm:text-5xl font-space font-bold text-white mb-4">Precision Testing for Complex Applications</h2>
+                    <p class="text-gray-400 text-base">Every assessment is driven by real offensive security experts simulating sophisticated threat actors.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -370,8 +260,8 @@
                             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
                         </div>
                         <h3 class="text-xl font-space font-bold text-white mb-2">Web Application Pentest</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed mb-6">Deep manual testing uncovering complex business logic flaws, authorization bypasses, and multi-tenant security risks.</p>
-                        <a href="services/web-application-pentest.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Service →</a>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6">Deep manual testing uncover business logic vulnerabilities, authorization bypasses, and complex injection flaws that automated tools miss.</p>
+                        <a href="services/web-application-pentest.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Capability →</a>
                     </div>
 
                     <!-- API Pentest -->
@@ -379,9 +269,9 @@
                         <div class="card-icon">
                             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                         </div>
-                        <h3 class="text-xl font-space font-bold text-white mb-2">API Security Assessment</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed mb-6">Rigorous analysis of RESTful APIs, GraphQL schema endpoints, and microservices for BOLA/IDOR and broken authentication.</p>
-                        <a href="services/api-pentest.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Service →</a>
+                        <h3 class="text-xl font-space font-bold text-white mb-2">API Penetration Testing</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6"> Rigorous security reviews of RESTful APIs, GraphQL endpoints, and microservices for BOLA/IDOR, broken authentication, and rate-limit bypasses.</p>
+                        <a href="services/api-pentest.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Capability →</a>
                     </div>
 
                     <!-- Mobile Pentest -->
@@ -390,58 +280,24 @@
                             <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
                         </div>
                         <h3 class="text-xl font-space font-bold text-white mb-2">Mobile Application Pentest</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed mb-6">Static and dynamic binary analysis of iOS & Android clients, local data storage, Frida hooking, and API communication.</p>
-                        <a href="services/mobile-pentest.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Service →</a>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-6">Static and dynamic analysis of iOS & Android binaries, IPC channels, local data storage, and backend API integration security.</p>
+                        <a href="services/mobile-pentest.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Capability →</a>
                     </div>
 
-<<<<<<< HEAD
-=======
-                    <!-- Cloud Pentest -->
-                    <div class="service-card reveal">
-                        <div class="card-icon">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
-                        </div>
-                        <h3 class="text-xl font-space font-bold text-white mb-2">Cloud Infrastructure Audit</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed mb-6">Assess IAM policy permissions, Kubernetes clusters, serverless functions, and storage bucket security across AWS, Azure, and GCP.</p>
-                        <a href="services/cloud-pentest.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Service →</a>
-                    </div>
-
-                    <!-- Red Team -->
-                    <div class="service-card reveal">
-                        <div class="card-icon">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                        </div>
-                        <h3 class="text-xl font-space font-bold text-white mb-2">Red Team Operations</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed mb-6">Objective-driven stealth adversary simulations measuring your SOC's detection latency and incident response readiness.</p>
-                        <a href="services/red-team.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Service →</a>
-                    </div>
-
-                    <!-- Continuous Pentest -->
-                    <div class="service-card reveal">
-                        <div class="card-icon">
-                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-                        </div>
-                        <h3 class="text-xl font-space font-bold text-white mb-2">Continuous Security Testing</h3>
-                        <p class="text-sm text-gray-400 leading-relaxed mb-6">Offensive security integrated directly into your active development cycles to validate new feature deployments year-round.</p>
-                        <a href="services/continuous-pentest.html" class="text-xs font-mono text-volcano-red hover:underline inline-flex items-center gap-1">Explore Service →</a>
-                    </div>
-
->>>>>>> 52d21ea (style & refactor: integrate new brand logo, remove generic AI badges, polish professional UX)
                 </div>
             </div>
         </section>
 
-        <!-- Why Choose Mystery -->
+        <!-- Why Mystery Pillars -->
         <section class="py-20 bg-[#0d0d0f] border-y border-white/10">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="max-w-2xl mb-16">
-                    <h2 class="text-3xl sm:text-4xl font-space font-bold text-white mb-4">Built for Security-Conscious Organizations</h2>
-                    <p class="text-gray-400">Why engineering and security leaders rely on MYSTERY for critical infrastructure testing.</p>
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <div class="section-label">The Mystery Advantage</div>
+                    <h2 class="text-4xl font-space font-bold text-white mb-4">Why Security Leaders Choose MYSTERY</h2>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
                     <div class="p-8 surface rounded-2xl">
-<<<<<<< HEAD
                         <div class="text-volcano-red font-mono text-sm mb-3">01 HUMAN-LED EXCELLENCE</div>
                         <h3 class="text-xl font-space font-bold text-white mb-3">100% Manual Testing</h3>
                         <p class="text-gray-400 text-sm leading-relaxed">Automated scanners produce noise and miss business logic flaws. Every assessment by MYSTERY is executed by hands-on offensive security experts.</p>
@@ -457,32 +313,62 @@
                         <div class="text-volcano-red font-mono text-sm mb-3">03 REMEDIATION FIRST</div>
                         <h3 class="text-xl font-space font-bold text-white mb-3">Unlimited Retesting Included</h3>
                         <p class="text-gray-400 text-sm leading-relaxed">We don't just hand you a PDF report. We validate your security patches and verify fixes until your infrastructure is provably secure.</p>
-=======
-                        <h3 class="text-xl font-space font-bold text-white mb-3">Manual Rigor</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Automated scanners generate noise and miss logical flaws. Every MYSTERY finding is manually verified with reproducible exploit steps.</p>
-                    </div>
-
-                    <div class="p-8 surface rounded-2xl">
-                        <h3 class="text-xl font-space font-bold text-white mb-3">Research Focus</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Our security specialists actively conduct vulnerability research, keeping our methodology ahead of modern threat actor techniques.</p>
-                    </div>
-
-                    <div class="p-8 surface rounded-2xl">
-                        <h3 class="text-xl font-space font-bold text-white mb-3">Verification Included</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">We retest your deployed remediation patches to ensure vulnerabilities are completely resolved before final sign-off.</p>
->>>>>>> 52d21ea (style & refactor: integrate new brand logo, remove generic AI badges, polish professional UX)
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Final Call to Action -->
-        <section class="py-24 bg-gradient-to-b from-[#070708] to-[#0d0d0f] relative">
+        <!-- Assessment Lifecycle Methodology -->
+        <section class="py-24 relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <div class="section-label">Assessment Lifecycle</div>
+                    <h2 class="text-4xl font-space font-bold text-white mb-4">Rigorous Methodical Execution</h2>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <div class="p-5 surface rounded-xl text-center">
+                        <div class="text-xs font-mono text-volcano-red mb-2">STAGE 01</div>
+                        <div class="font-space font-bold text-white text-base mb-1">Scoping</div>
+                        <div class="text-xs text-gray-400">Rules of engagement & asset definition.</div>
+                    </div>
+                    <div class="p-5 surface rounded-xl text-center">
+                        <div class="text-xs font-mono text-volcano-red mb-2">STAGE 02</div>
+                        <div class="font-space font-bold text-white text-base mb-1">Reconnaissance</div>
+                        <div class="text-xs text-gray-400">OSINT & attack surface mapping.</div>
+                    </div>
+                    <div class="p-5 surface rounded-xl text-center">
+                        <div class="text-xs font-mono text-volcano-red mb-2">STAGE 03</div>
+                        <div class="font-space font-bold text-white text-base mb-1">Analysis</div>
+                        <div class="text-xs text-gray-400">Threat modeling & entry-point discovery.</div>
+                    </div>
+                    <div class="p-5 surface rounded-xl text-center">
+                        <div class="text-xs font-mono text-volcano-red mb-2">STAGE 04</div>
+                        <div class="font-space font-bold text-white text-base mb-1">Exploitation</div>
+                        <div class="text-xs text-gray-400">Safe manual vulnerability validation.</div>
+                    </div>
+                    <div class="p-5 surface rounded-xl text-center">
+                        <div class="text-xs font-mono text-volcano-red mb-2">STAGE 05</div>
+                        <div class="font-space font-bold text-white text-base mb-1">Reporting</div>
+                        <div class="text-xs text-gray-400">Actionable executive & tech reports.</div>
+                    </div>
+                    <div class="p-5 surface rounded-xl text-center">
+                        <div class="text-xs font-mono text-volcano-red mb-2">STAGE 06</div>
+                        <div class="font-space font-bold text-white text-base mb-1">Retesting</div>
+                        <div class="text-xs text-gray-400">Verification of deployed fixes.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="py-24 bg-gradient-to-b from-[#070708] to-[#0d0d0f] border-t border-white/10 relative">
             <div class="max-w-4xl mx-auto px-6 text-center">
-                <h2 class="text-4xl sm:text-5xl font-space font-bold text-white mb-6">Ready to secure your application?</h2>
-                <p class="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">Get in touch with our security team for a confidential scoping review and technical assessment proposal.</p>
+                <div class="tag mb-6">READY TO ELEVATE YOUR SECURITY POSTURE?</div>
+                <h2 class="text-4xl sm:text-5xl font-space font-bold text-white mb-6">Attack your security before real attackers do.</h2>
+                <p class="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">Get in touch with our offensive security team today for a confidential scoping conversation and custom technical proposal.</p>
                 <div class="flex justify-center gap-4">
-                    <a href="contact.html" class="btn-primary text-base px-8 py-4">Request Security Proposal</a>
+                    <a href="contact.html" class="btn-primary text-base px-8 py-4">Request a Security Assessment</a>
                 </div>
             </div>
         </section>
@@ -492,39 +378,28 @@
     <footer class="bg-[#070708] border-t border-white/10 py-16 text-sm text-gray-400">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-5 gap-10">
             <div class="col-span-2">
-                <a href="index.html" class="flex items-center gap-3 mb-4">
-                    <img src="assets/logo/mystery-fedora-icon.png" alt="MYSTERY Logo" class="h-8 w-auto rounded-md">
-                    <span class="font-space font-bold text-lg text-white">MYSTERY</span>
+                <a href="index.html" class="inline-block mb-4">
+                    <img src="assets/logo/mystery-logo.svg" alt="MYSTERY Logo" class="h-8 w-auto">
                 </a>
                 <p class="text-xs text-gray-400 max-w-sm mb-6 leading-relaxed">
-<<<<<<< HEAD
                     MYSTERY is a focused offensive security team providing manual web, API, mobile, and network penetration testing for high-growth startups and enterprises.
-=======
-                    MYSTERY is a specialized security collective delivering manual penetration testing, cloud security audits, and adversary simulations.
->>>>>>> 52d21ea (style & refactor: integrate new brand logo, remove generic AI badges, polish professional UX)
                 </p>
-                <div class="text-xs font-mono text-gray-300">Email: <a href="mailto:mystery.security@gmail.com" class="text-volcano-red hover:underline">mystery.security@gmail.com</a></div>
+                <div class="text-xs font-mono text-volcano-red">Contact: mystery.security@gmail.com</div>
             </div>
             <div>
                 <h4 class="font-space font-bold text-white text-sm mb-4">Services</h4>
                 <ul class="space-y-2">
                     <li><a href="services/web-application-pentest.html" class="footer-link">Web Pentest</a></li>
-                    <li><a href="services/api-pentest.html" class="footer-link">API Security</a></li>
+                    <li><a href="services/api-pentest.html" class="footer-link">API Pentest</a></li>
                     <li><a href="services/mobile-pentest.html" class="footer-link">Mobile Pentest</a></li>
-<<<<<<< HEAD
                     <li><a href="services/network-pentest.html" class="footer-link">Network Pentest</a></li>
-=======
-                    <li><a href="services/cloud-pentest.html" class="footer-link">Cloud Security</a></li>
-                    <li><a href="services/red-team.html" class="footer-link">Red Teaming</a></li>
-                    <li><a href="services/continuous-pentest.html" class="footer-link">Continuous Testing</a></li>
->>>>>>> 52d21ea (style & refactor: integrate new brand logo, remove generic AI badges, polish professional UX)
                 </ul>
             </div>
             <div>
                 <h4 class="font-space font-bold text-white text-sm mb-4">Company</h4>
                 <ul class="space-y-2">
                     <li><a href="company/about.html" class="footer-link">About Mystery</a></li>
-                    <li><a href="company/team.html" class="footer-link">Team & Researchers</a></li>
+                    <li><a href="company/team.html" class="footer-link">Our Researchers</a></li>
                     <li><a href="company/certifications.html" class="footer-link">Certifications</a></li>
                     <li><a href="company/hall-of-fame.html" class="footer-link">Hall of Fame</a></li>
                     <li><a href="pricing.html" class="footer-link">Pricing</a></li>
@@ -540,8 +415,8 @@
             </div>
         </div>
         <div class="max-w-7xl mx-auto px-6 mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between text-xs text-gray-500 font-mono">
-            <div>© 2026 MYSTERY Security Labs. All rights reserved.</div>
-            <div>Offensive Security & Vulnerability Research</div>
+            <div>© 2026 MYSTERY Offensive Security Labs. All rights reserved.</div>
+            <div>High-Impact Manual Security Research</div>
         </div>
     </footer>
 

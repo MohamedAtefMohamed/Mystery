@@ -1,20 +1,22 @@
-/* Base Custom Styles & Smooth Scrolling */
+/* Base Clean Styles & Native Smooth Scrolling */
 html {
     scroll-behavior: smooth;
     color-scheme: dark;
 }
 
 body {
-    cursor: none; /* Custom cursor */
     background-color: #050505;
     color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body.loading {
     overflow: hidden;
 }
 
-/* Custom Scrollbar */
+/* Custom Lightweight Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -28,7 +30,6 @@ body.loading {
 }
 ::-webkit-scrollbar-thumb:hover {
     background: #ff2400;
-    box-shadow: 0 0 10px rgba(255, 36, 0, 0.8);
 }
 
 /* Custom Selection */
@@ -39,143 +40,42 @@ body.loading {
 
 /* Glassmorphism Panels */
 .glass-panel {
-    background: rgba(15, 15, 15, 0.65);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(15, 15, 15, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-panel-glow {
-    background: rgba(18, 18, 18, 0.7);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 36, 0, 0.2);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 0 0 15px 0 rgba(255, 36, 0, 0.15);
+    background: rgba(18, 18, 18, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 36, 0, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
 }
 
 .bg-hero-pattern {
     background-size: 40px 40px;
-    background-image: radial-gradient(circle at center, rgba(255, 36, 0, 0.15) 1px, transparent 1px);
+    background-image: radial-gradient(circle at center, rgba(255, 36, 0, 0.12) 1px, transparent 1px);
 }
 
-/* Custom Cursor Styles */
-.cursor-dot, .cursor-outline {
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 9999;
-    pointer-events: none;
-    will-change: transform;
-}
-
-.cursor-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #ff2400;
-    box-shadow: 0 0 10px #ff2400, 0 0 20px #ff2400;
-    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
-}
-
-.cursor-outline {
-    width: 36px;
-    height: 36px;
-    border: 1px solid rgba(255, 36, 0, 0.5);
-    box-shadow: 0 0 15px rgba(255, 36, 0, 0.2);
-    transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
-}
-
-/* Hover States for Cursor */
-.hovering-link .cursor-dot {
-    width: 4px;
-    height: 4px;
-    background-color: #ffffff;
-}
-
-.hovering-link .cursor-outline {
-    width: 52px;
-    height: 52px;
-    border-color: #ff2400;
-    background-color: rgba(255, 36, 0, 0.12);
-}
-
-.magnetic-hover .cursor-dot {
-    width: 0;
-    height: 0;
-}
-
-.magnetic-hover .cursor-outline {
-    width: 64px;
-    height: 64px;
-    background-color: rgba(255, 36, 0, 0.15);
-    border-color: #ff2400;
-    box-shadow: 0 0 25px rgba(255, 36, 0, 0.4);
-}
-
-/* Cyber Glitch Effect for Preloader */
-.cyber-glitch-text {
-    position: relative;
-}
-
-.cyber-glitch-text::before,
-.cyber-glitch-text::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.8;
-}
-
-.cyber-glitch-text::before {
-    left: 2px;
-    text-shadow: -2px 0 #ff2400;
-    animation: glitch-anim-1 2s infinite linear alternate-reverse;
-}
-
-.cyber-glitch-text::after {
-    left: -2px;
-    text-shadow: 2px 0 #00ffff;
-    animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
-}
-
-@keyframes glitch-anim-1 {
-    0% { clip-path: inset(20% 0 80% 0); }
-    20% { clip-path: inset(60% 0 10% 0); }
-    40% { clip-path: inset(40% 0 50% 0); }
-    60% { clip-path: inset(80% 0 5% 0); }
-    80% { clip-path: inset(10% 0 70% 0); }
-    100% { clip-path: inset(30% 0 20% 0); }
-}
-
-@keyframes glitch-anim-2 {
-    0% { clip-path: inset(10% 0 60% 0); }
-    20% { clip-path: inset(80% 0 5% 0); }
-    40% { clip-path: inset(30% 0 20% 0); }
-    60% { clip-path: inset(70% 0 10% 0); }
-    80% { clip-path: inset(20% 0 50% 0); }
-    100% { clip-path: inset(50% 0 30% 0); }
-}
-
-/* Scroll Reveal Animations with smooth cubic-bezier */
+/* Smooth Scroll Reveal Animations */
 .reveal-up {
     opacity: 0;
-    transform: translateY(35px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(24px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .reveal-left {
     opacity: 0;
-    transform: translateX(-35px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(-24px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .reveal-right {
     opacity: 0;
-    transform: translateX(35px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateX(24px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .reveal-up.active,
@@ -185,52 +85,15 @@ body.loading {
     transform: translate(0, 0);
 }
 
-/* 3D Tilt Card */
+/* Lightweight Hover Lift Card */
 .tilt-card {
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .tilt-card:hover {
-    box-shadow: 0 20px 40px -15px rgba(255, 36, 0, 0.25);
-}
-
-/* Pulse Glow Keyframe */
-@keyframes red-glow-pulse {
-    0%, 100% {
-        box-shadow: 0 0 15px rgba(255, 36, 0, 0.3), inset 0 0 15px rgba(255, 36, 0, 0.1);
-    }
-    50% {
-        box-shadow: 0 0 35px rgba(255, 36, 0, 0.6), inset 0 0 25px rgba(255, 36, 0, 0.3);
-    }
-}
-
-.glow-pulse {
-    animation: red-glow-pulse 4s infinite ease-in-out;
-}
-
-/* Floating animation */
-@keyframes float-slow {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-12px) rotate(1deg); }
-}
-
-.animate-float-slow {
-    animation: float-slow 7s ease-in-out infinite;
-}
-
-/* Service Card Active Filter Transition */
-.service-card {
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.service-card.hidden-card {
-    opacity: 0;
-    transform: scale(0.92);
-    pointer-events: none;
-    position: absolute;
-    visibility: hidden;
+    transform: translateY(-4px);
+    border-color: rgba(255, 36, 0, 0.4);
+    box-shadow: 0 12px 28px -10px rgba(255, 36, 0, 0.25);
 }
 
 /* Active Navlink styling */
@@ -241,46 +104,18 @@ body.loading {
     width: 100% !important;
 }
 
-/* Smooth modal overlay */
-.modal-backdrop {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-.modal-backdrop.active {
-    opacity: 1;
-    visibility: visible;
-}
-.modal-content {
-    transform: scale(0.95) translateY(20px);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.modal-backdrop.active .modal-content {
-    transform: scale(1) translateY(0);
+/* Infinite Marquee Animation */
+@keyframes marquee-scroll {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
 }
 
-/* Lenis Smooth Scroll CSS Rules */
-html.lenis, html.lenis body {
-    height: auto;
-}
-.lenis.lenis-smooth {
-    scroll-behavior: auto !important;
-}
-.lenis.lenis-smooth [data-lenis-prevent] {
-    overscroll-behavior: contain;
-}
-.lenis.lenis-stopped {
-    overflow: hidden;
+.animate-marquee-continuous {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 35s linear infinite;
 }
 
-/* Hardware Acceleration & Ultra-Smooth Performance */
-* {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+.animate-marquee-continuous:hover {
+    animation-play-state: paused;
 }
-
-.glass-panel, .glass-panel-glow, .tilt-card {
-    will-change: transform, opacity;
-    backface-visibility: hidden;
-}
-

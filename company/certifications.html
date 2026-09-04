@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Certifications — MYSTERY</title>
-    <meta name="description" content="Recognized professional offensive security certifications held by MYSTERY researchers: OSCP, CRTO, OSEP, eWPTX, and more.">
+    <meta name="description" content="Recognized professional offensive security certifications held by MYSTERY researchers: OSCP, CRTO, OSEP, eWPTX, BSCP, and eMAPT.">
     <link rel="icon" type="image/svg+xml" href="../assets/logo/mystery-icon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,7 +21,7 @@
     </script>
     <link rel="stylesheet" href="../style.css">
 </head>
-<body class="bg-[#070708] text-gray-100 antialiased">
+<body class="bg-[#070708] text-gray-100 antialiased min-h-screen flex flex-col justify-between">
 
     <!-- Header Navigation -->
     <header class="fixed w-full top-0 z-50 bg-[#070708]/90 backdrop-blur-md border-b border-white/10 px-6 py-4">
@@ -41,76 +41,184 @@
         </div>
     </header>
 
-    <main class="page-hero">
-        <div class="max-w-7xl mx-auto px-6">
+    <main class="page-hero flex-grow">
+        <div class="max-w-7xl mx-auto px-6 py-8">
             <div class="breadcrumb mb-6">
                 <a href="../index.html">HOME</a> <span>/</span> <a href="about.html">COMPANY</a> <span>/</span> <span>CERTIFICATIONS</span>
             </div>
 
             <div class="max-w-3xl mb-16">
                 <div class="tag mb-4">VERIFIED TECHNICAL CREDENTIALS</div>
-                <h1 class="text-5xl font-space font-bold text-white mb-6">Team Certifications</h1>
+                <h1 class="text-5xl font-space font-bold text-white mb-6">Industry Technical Certifications</h1>
                 <p class="text-lg text-gray-300 font-light leading-relaxed">
-                    Our security team holds hands-on, practical offensive security certifications recognized globally by enterprise security organizations.
+                    Our security team holds hands-on, practical offensive security credentials recognized globally by enterprise defense organizations.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- OSCP -->
-                <div class="surface p-6 rounded-xl">
-                    <div class="text-xs font-mono text-volcano-red mb-2">OFFSEC CERTIFIED PROFESSIONAL</div>
-                    <h3 class="text-xl font-space font-bold text-white mb-2">OSCP</h3>
-                    <p class="text-xs text-gray-400 leading-relaxed mb-4">Hands-on 24-hour practical penetration testing examination proving real-world network compromise capabilities.</p>
-                    <div class="text-[11px] font-mono text-gray-500">Issuer: OffSec</div>
+                <!-- OSCP Badge -->
+                <div class="surface p-8 rounded-2xl border border-white/10 flex flex-col justify-between hover:border-volcano-red/40 transition-colors group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+                            <div class="w-16 h-16 rounded-xl bg-[#141418] border border-red-500/30 flex items-center justify-center p-2 shadow-lg group-hover:scale-105 transition-transform">
+                                <!-- OffSec OSCP Emblem SVG -->
+                                <svg class="w-12 h-12 text-red-500" viewBox="0 0 100 100" fill="none">
+                                    <polygon points="50,5 90,27 90,73 50,95 10,73 10,27" fill="#1a0b0b" stroke="#e63e28" stroke-width="4"/>
+                                    <path d="M30 45 L50 25 L70 45 L50 65 Z" fill="#e63e28"/>
+                                    <text x="50" y="80" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold" font-family="monospace">OSCP</text>
+                                </svg>
+                            </div>
+                            <span class="text-[11px] font-mono px-3 py-1 rounded-full bg-red-950/60 border border-red-500/30 text-red-400">OffSec</span>
+                        </div>
+                        <h3 class="text-2xl font-space font-bold text-white mb-2">OSCP</h3>
+                        <div class="text-xs font-mono text-gray-400 mb-4">OffSec Certified Professional</div>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">Practical 24-hour network penetration testing certification validating real-world exploit development and system compromise.</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 text-[11px] font-mono text-gray-500 flex justify-between">
+                        <span>Issuer: Offensive Security</span>
+                        <span class="text-emerald-400 font-bold">✓ Verified</span>
+                    </div>
                 </div>
 
-                <!-- CRTO -->
-                <div class="surface p-6 rounded-xl">
-                    <div class="text-xs font-mono text-volcano-red mb-2">CERTIFIED SECURITY OPERATOR</div>
-                    <h3 class="text-xl font-space font-bold text-white mb-2">CRTO</h3>
-                    <p class="text-xs text-gray-400 leading-relaxed mb-4">Advanced Active Directory compromise, Cobalt Strike C2 operations, and defense evasion.</p>
-                    <div class="text-[11px] font-mono text-gray-500">Issuer: Zero-Point Security</div>
+                <!-- CRTO Badge -->
+                <div class="surface p-8 rounded-2xl border border-white/10 flex flex-col justify-between hover:border-volcano-red/40 transition-colors group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+                            <div class="w-16 h-16 rounded-xl bg-[#141418] border border-red-500/30 flex items-center justify-center p-2 shadow-lg group-hover:scale-105 transition-transform">
+                                <!-- Zero-Point Security CRTO Badge SVG -->
+                                <svg class="w-12 h-12 text-red-500" viewBox="0 0 100 100" fill="none">
+                                    <circle cx="50" cy="50" r="42" fill="#0d1520" stroke="#e63e28" stroke-width="4"/>
+                                    <circle cx="50" cy="50" r="28" stroke="#ffffff" stroke-width="2" stroke-dasharray="4 2"/>
+                                    <line x1="50" y1="15" x2="50" y2="85" stroke="#e63e28" stroke-width="3"/>
+                                    <line x1="15" y1="50" x2="85" y2="50" stroke="#e63e28" stroke-width="3"/>
+                                    <text x="50" y="55" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold" font-family="sans-serif">CRTO</text>
+                                </svg>
+                            </div>
+                            <span class="text-[11px] font-mono px-3 py-1 rounded-full bg-red-950/60 border border-red-500/30 text-red-400">Zero-Point</span>
+                        </div>
+                        <h3 class="text-2xl font-space font-bold text-white mb-2">CRTO</h3>
+                        <div class="text-xs font-mono text-gray-400 mb-4">Certified Red Team Operator</div>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">Advanced Active Directory compromise, Cobalt Strike command & control operations, and defense evasion testing.</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 text-[11px] font-mono text-gray-500 flex justify-between">
+                        <span>Issuer: Zero-Point Security</span>
+                        <span class="text-emerald-400 font-bold">✓ Verified</span>
+                    </div>
                 </div>
 
-                <!-- eWPTX -->
-                <div class="surface p-6 rounded-xl">
-                    <div class="text-xs font-mono text-volcano-red mb-2">WEB APPLICATION PENTESTING EXTREME</div>
-                    <h3 class="text-xl font-space font-bold text-white mb-2">eWPTXv2</h3>
-                    <p class="text-xs text-gray-400 leading-relaxed mb-4">Advanced web application vulnerability analysis, WAF bypass, and complex exploit chaining.</p>
-                    <div class="text-[11px] font-mono text-gray-500">Issuer: INE Security</div>
+                <!-- eWPTXv2 Badge -->
+                <div class="surface p-8 rounded-2xl border border-white/10 flex flex-col justify-between hover:border-volcano-red/40 transition-colors group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+                            <div class="w-16 h-16 rounded-xl bg-[#141418] border border-red-500/30 flex items-center justify-center p-2 shadow-lg group-hover:scale-105 transition-transform">
+                                <!-- INE eWPTX Badge SVG -->
+                                <svg class="w-12 h-12" viewBox="0 0 100 100" fill="none">
+                                    <rect x="10" y="10" width="80" height="80" rx="16" fill="#141824" stroke="#3b82f6" stroke-width="4"/>
+                                    <path d="M30 40 L50 25 L70 40 L70 65 L50 75 L30 65 Z" fill="#1e293b" stroke="#60a5fa" stroke-width="2"/>
+                                    <text x="50" y="54" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold" font-family="monospace">eWPTX</text>
+                                </svg>
+                            </div>
+                            <span class="text-[11px] font-mono px-3 py-1 rounded-full bg-blue-950/60 border border-blue-500/30 text-blue-400">INE Security</span>
+                        </div>
+                        <h3 class="text-2xl font-space font-bold text-white mb-2">eWPTXv2</h3>
+                        <div class="text-xs font-mono text-gray-400 mb-4">Web Application Pentesting Extreme</div>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">Advanced web application vulnerability analysis, WAF bypass techniques, and complex exploit chaining.</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 text-[11px] font-mono text-gray-500 flex justify-between">
+                        <span>Issuer: INE Security</span>
+                        <span class="text-emerald-400 font-bold">✓ Verified</span>
+                    </div>
                 </div>
 
-                <!-- OSEP -->
-                <div class="surface p-6 rounded-xl">
-                    <div class="text-xs font-mono text-volcano-red mb-2">OFFSEC EXPERT EXPERIENCED PENETRATOR</div>
-                    <h3 class="text-xl font-space font-bold text-white mb-2">OSEP</h3>
-                    <p class="text-xs text-gray-400 leading-relaxed mb-4">Advanced evasion techniques, antivirus bypass, and breach simulation against hardened targets.</p>
-                    <div class="text-[11px] font-mono text-gray-500">Issuer: OffSec</div>
+                <!-- OSEP Badge -->
+                <div class="surface p-8 rounded-2xl border border-white/10 flex flex-col justify-between hover:border-volcano-red/40 transition-colors group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+                            <div class="w-16 h-16 rounded-xl bg-[#141418] border border-red-500/30 flex items-center justify-center p-2 shadow-lg group-hover:scale-105 transition-transform">
+                                <!-- OffSec OSEP Badge SVG -->
+                                <svg class="w-12 h-12 text-red-500" viewBox="0 0 100 100" fill="none">
+                                    <polygon points="50,5 90,27 90,73 50,95 10,73 10,27" fill="#260f0f" stroke="#e63e28" stroke-width="4"/>
+                                    <path d="M50 20 L80 50 L50 80 L20 50 Z" stroke="#ffffff" stroke-width="3" fill="none"/>
+                                    <text x="50" y="55" text-anchor="middle" fill="#e63e28" font-size="12" font-weight="bold" font-family="monospace">OSEP</text>
+                                </svg>
+                            </div>
+                            <span class="text-[11px] font-mono px-3 py-1 rounded-full bg-red-950/60 border border-red-500/30 text-red-400">OffSec</span>
+                        </div>
+                        <h3 class="text-2xl font-space font-bold text-white mb-2">OSEP</h3>
+                        <div class="text-xs font-mono text-gray-400 mb-4">OffSec Experienced Penetrator</div>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">Advanced evasion techniques, antivirus & EDR bypass, and breach simulation against hardened enterprise targets.</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 text-[11px] font-mono text-gray-500 flex justify-between">
+                        <span>Issuer: Offensive Security</span>
+                        <span class="text-emerald-400 font-bold">✓ Verified</span>
+                    </div>
                 </div>
 
-                <!-- BSCP -->
-                <div class="surface p-6 rounded-xl">
-                    <div class="text-xs font-mono text-volcano-red mb-2">BURP SUITE CERTIFIED PRACTITIONER</div>
-                    <h3 class="text-xl font-space font-bold text-white mb-2">BSCP</h3>
-                    <p class="text-xs text-gray-400 leading-relaxed mb-4">Rigorous hands-on web security examination covering complex web vulnerabilities and logic flaws.</p>
-                    <div class="text-[11px] font-mono text-gray-500">Issuer: PortSwigger</div>
+                <!-- BSCP Badge -->
+                <div class="surface p-8 rounded-2xl border border-white/10 flex flex-col justify-between hover:border-volcano-red/40 transition-colors group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+                            <div class="w-16 h-16 rounded-xl bg-[#141418] border border-orange-500/30 flex items-center justify-center p-2 shadow-lg group-hover:scale-105 transition-transform">
+                                <!-- PortSwigger BSCP Badge SVG -->
+                                <svg class="w-12 h-12 text-orange-500" viewBox="0 0 100 100" fill="none">
+                                    <polygon points="50,10 85,30 85,70 50,90 15,70 15,30" fill="#1c120c" stroke="#ff6600" stroke-width="4"/>
+                                    <path d="M35 35 H65 V48 H48 V65 H35 Z" fill="#ff6600"/>
+                                    <text x="60" y="65" font-size="14" font-weight="bold" fill="#ffffff">P</text>
+                                </svg>
+                            </div>
+                            <span class="text-[11px] font-mono px-3 py-1 rounded-full bg-orange-950/60 border border-orange-500/30 text-orange-400">PortSwigger</span>
+                        </div>
+                        <h3 class="text-2xl font-space font-bold text-white mb-2">BSCP</h3>
+                        <div class="text-xs font-mono text-gray-400 mb-4">Burp Suite Certified Practitioner</div>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">Rigorous practical web security exam proving expert proficiency in discovering complex web vulnerabilities using Burp Suite Pro.</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 text-[11px] font-mono text-gray-500 flex justify-between">
+                        <span>Issuer: PortSwigger</span>
+                        <span class="text-emerald-400 font-bold">✓ Verified</span>
+                    </div>
                 </div>
 
-                <!-- eMAPT -->
-                <div class="surface p-6 rounded-xl">
-                    <div class="text-xs font-mono text-volcano-red mb-2">MOBILE APPLICATION PENTESTER</div>
-                    <h3 class="text-xl font-space font-bold text-white mb-2">eMAPT</h3>
-                    <p class="text-xs text-gray-400 leading-relaxed mb-4">Practical mobile security assessment certification covering Android and iOS binary reversing.</p>
-                    <div class="text-[11px] font-mono text-gray-500">Issuer: INE Security</div>
+                <!-- eMAPT Badge -->
+                <div class="surface p-8 rounded-2xl border border-white/10 flex flex-col justify-between hover:border-volcano-red/40 transition-colors group">
+                    <div>
+                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+                            <div class="w-16 h-16 rounded-xl bg-[#141418] border border-blue-500/30 flex items-center justify-center p-2 shadow-lg group-hover:scale-105 transition-transform">
+                                <!-- INE eMAPT Badge SVG -->
+                                <svg class="w-12 h-12" viewBox="0 0 100 100" fill="none">
+                                    <rect x="25" y="10" width="50" height="80" rx="8" fill="#0f172a" stroke="#3b82f6" stroke-width="4"/>
+                                    <circle cx="50" cy="80" r="4" fill="#3b82f6"/>
+                                    <rect x="35" y="25" width="30" height="45" fill="#1e293b"/>
+                                    <text x="50" y="50" text-anchor="middle" fill="#60a5fa" font-size="9" font-weight="bold" font-family="monospace">eMAPT</text>
+                                </svg>
+                            </div>
+                            <span class="text-[11px] font-mono px-3 py-1 rounded-full bg-blue-950/60 border border-blue-500/30 text-blue-400">INE Security</span>
+                        </div>
+                        <h3 class="text-2xl font-space font-bold text-white mb-2">eMAPT</h3>
+                        <div class="text-xs font-mono text-gray-400 mb-4">Mobile Application Pentester</div>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">Hands-on mobile application security certification covering Android and iOS binary analysis, runtime manipulation, and API security.</p>
+                    </div>
+                    <div class="pt-4 border-t border-white/10 text-[11px] font-mono text-gray-500 flex justify-between">
+                        <span>Issuer: INE Security</span>
+                        <span class="text-emerald-400 font-bold">✓ Verified</span>
+                    </div>
                 </div>
 
             </div>
         </div>
     </main>
 
-    <footer class="bg-[#070708] border-t border-white/10 py-12 text-center text-xs text-gray-500 font-mono">
-        © 2026 MYSTERY Offensive Security Labs.
+    <!-- Footer -->
+    <footer class="bg-[#070708] border-t border-white/10 py-12 text-center text-xs text-gray-500 font-mono mt-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>© 2026 MYSTERY Security Labs. All rights reserved.</div>
+            <div class="flex gap-6 text-gray-400">
+                <a href="about.html" class="hover:text-white">About</a>
+                <a href="hall-of-fame.html" class="hover:text-white">Hall of Fame</a>
+                <a href="../pricing.html" class="hover:text-white">Pricing</a>
+                <a href="../legal/privacy.html" class="hover:text-white">Privacy</a>
+            </div>
+        </div>
     </footer>
     <script src="../assets/js/main.js"></script>
 </body>

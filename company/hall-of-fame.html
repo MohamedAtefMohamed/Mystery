@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hall of Fame & Vulnerability Disclosures — MYSTERY</title>
-    <meta name="description" content="Responsible disclosure acknowledgements and vulnerability research contributions by MYSTERY security researchers.">
+    <meta name="description" content="Responsible disclosure acknowledgements and vulnerability research contributions by MYSTERY security researchers. Featuring Hall of Fame recognitions from Google, Apple, Microsoft, Tesla, NASA, OpenAI, Meta, SpaceX, and more.">
     <link rel="icon" type="image/svg+xml" href="../assets/logo/mystery-icon.svg">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,7 +21,7 @@
     </script>
     <link rel="stylesheet" href="../style.css">
 </head>
-<body class="bg-[#070708] text-gray-100 antialiased">
+<body class="bg-[#070708] text-gray-100 antialiased min-h-screen flex flex-col justify-between">
 
     <!-- Header Navigation -->
     <header class="fixed w-full top-0 z-50 bg-[#070708]/90 backdrop-blur-md border-b border-white/10 px-6 py-4">
@@ -41,49 +41,197 @@
         </div>
     </header>
 
-    <main class="page-hero">
-        <div class="max-w-7xl mx-auto px-6">
+    <main class="page-hero flex-grow">
+        <div class="max-w-7xl mx-auto px-6 py-8">
             <div class="breadcrumb mb-6">
                 <a href="../index.html">HOME</a> <span>/</span> <a href="about.html">COMPANY</a> <span>/</span> <span>HALL OF FAME</span>
             </div>
 
             <div class="max-w-3xl mb-16">
-                <div class="tag mb-4">RESPONSIBLE DISCLOSURE & ACKNOWLEDGEMENTS</div>
-                <h1 class="text-5xl font-space font-bold text-white mb-6">Hall of Fame & Research Recognitions</h1>
+                <div class="tag mb-4">DISCLOSURES & RECOGNITIONS</div>
+                <h1 class="text-5xl font-space font-bold text-white mb-6">Team Hall of Fame</h1>
                 <p class="text-lg text-gray-300 font-light leading-relaxed">
-                    MYSTERY security researchers actively participate in coordinated vulnerability disclosure programs, discovering high-impact flaws and securing global infrastructure.
+                    Our security researchers have discovered and responsibly disclosed high-impact security vulnerabilities to the world's leading technology organizations and government entities.
                 </p>
             </div>
 
-            <div class="surface p-8 rounded-2xl mb-12">
-                <h2 class="text-2xl font-space font-bold text-white mb-4">Ethical Disclosure Commitment</h2>
+            <!-- Hall of Fame Marquee Ticker -->
+            <div class="overflow-hidden border-y border-white/10 bg-[#0d0d0f]/60 py-6 mb-16 relative">
+                <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#070708] to-transparent z-10 pointer-events-none"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#070708] to-transparent z-10 pointer-events-none"></div>
+
+                <div class="marquee-track flex gap-12 items-center">
+                    <!-- Marquee Set 1 -->
+                    <div class="flex items-center gap-12 shrink-0">
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg> Google</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.19c.63-.78 1.07-1.87.95-2.96-.92.04-2.07.62-2.73 1.39-.59.68-1.1 1.77-.96 2.84 1.03.08 2.11-.49 2.74-1.27z"/></svg> Apple</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zM24 11.4H12.6V0H24v11.4z"/></svg> Microsoft</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> French Gov</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5zm0 2.2L18 8v8l-6 3.8L6 16V8l6-3.8z"/></svg> Tesla</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> NASA</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5L3 7v10l9 4.5 9-4.5V7l-9-4.5zm0 2.4l6.5 3.25L12 11.4 5.5 8.15 12 4.9z"/></svg> SpaceX</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M15.93 17.09c-2.43 1.83-5.94 2.82-8.99 2.82-4.24 0-8.06-1.57-10.94-4.21-.23-.21-.03-.49.24-.33 3.1 1.83 6.94 2.94 10.92 2.94 2.7 0 5.67-.67 8.35-2.07.41-.21.78.23.42.85z"/></svg> Amazon</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg> Oracle</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> MongoDB</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M22.28 9.77a6 6 0 0 0-.52-5.18 6.13 6.13 0 0 0-6.57-2.9A6 6 0 0 0 10.4 0a6.13 6.13 0 0 0-5.77 4.12 6 6 0 0 0-4.14 2.9A6.13 6.13 0 0 0 .8 13.59a6 6 0 0 0 .52 5.18 6.13 6.13 0 0 0 6.57 2.9A6 6 0 0 0 13.6 24a6.13 6.13 0 0 0 5.77-4.12 6 6 0 0 0 4.14-2.9 6.13 6.13 0 0 0-.23-7.21z"/></svg> OpenAI</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0 3.17-1.34 5.92-3.48 7.82l-2.02-2.02C20.01 16.38 21 14.3 21 12c0-4.97-4.03-9-9-9S3 7.03 3 12c0 2.3.99 4.38 2.5 5.8l-2.02 2.02C1.34 17.92 0 15.17 0 12 0 5.37 5.37 0 12 0s12 5.37 12 12z"/></svg> Meta</span>
+                    </div>
+
+                    <!-- Marquee Set 2 (Duplicate for continuous loop) -->
+                    <div class="flex items-center gap-12 shrink-0">
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg> Google</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.19c.63-.78 1.07-1.87.95-2.96-.92.04-2.07.62-2.73 1.39-.59.68-1.1 1.77-.96 2.84 1.03.08 2.11-.49 2.74-1.27z"/></svg> Apple</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zM24 11.4H12.6V0H24v11.4z"/></svg> Microsoft</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> French Gov</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5zm0 2.2L18 8v8l-6 3.8L6 16V8l6-3.8z"/></svg> Tesla</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> NASA</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5L3 7v10l9 4.5 9-4.5V7l-9-4.5zm0 2.4l6.5 3.25L12 11.4 5.5 8.15 12 4.9z"/></svg> SpaceX</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M15.93 17.09c-2.43 1.83-5.94 2.82-8.99 2.82-4.24 0-8.06-1.57-10.94-4.21-.23-.21-.03-.49.24-.33 3.1 1.83 6.94 2.94 10.92 2.94 2.7 0 5.67-.67 8.35-2.07.41-.21.78.23.42.85z"/></svg> Amazon</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg> Oracle</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> MongoDB</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M22.28 9.77a6 6 0 0 0-.52-5.18 6.13 6.13 0 0 0-6.57-2.9A6 6 0 0 0 10.4 0a6.13 6.13 0 0 0-5.77 4.12 6 6 0 0 0-4.14 2.9A6.13 6.13 0 0 0 .8 13.59a6 6 0 0 0 .52 5.18 6.13 6.13 0 0 0 6.57 2.9A6 6 0 0 0 13.6 24a6.13 6.13 0 0 0 5.77-4.12 6 6 0 0 0 4.14-2.9 6.13 6.13 0 0 0-.23-7.21z"/></svg> OpenAI</span>
+                        <span class="text-sm font-space font-bold text-gray-400 flex items-center gap-3"><svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0 3.17-1.34 5.92-3.48 7.82l-2.02-2.02C20.01 16.38 21 14.3 21 12c0-4.97-4.03-9-9-9S3 7.03 3 12c0 2.3.99 4.38 2.5 5.8l-2.02 2.02C1.34 17.92 0 15.17 0 12 0 5.37 5.37 0 12 0s12 5.37 12 12z"/></svg> Meta</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hall of Fame Company Logo Cards Grid -->
+            <div class="mb-16">
+                <h2 class="text-2xl font-space font-bold text-white mb-8">Organizations & Government Disclosures</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                    
+                    <!-- Google -->
+                    <div class="surface p-6 rounded-xl border border-white/10 flex flex-col items-center justify-center gap-3 hover:border-volcano-red/50 transition-all hover:-translate-y-1 group text-center">
+                        <div class="w-12 h-12 rounded-lg bg-[#141418] border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
+                        </div>
+                        <span class="font-space font-bold text-sm text-white">Google</span>
+                        <span class="text-[10px] font-mono text-gray-500">Security Hall of Fame</span>
+                    </div>
+
+                    <!-- Apple -->
+                    <div class="surface p-6 rounded-xl border border-white/10 flex flex-col items-center justify-center gap-3 hover:border-volcano-red/50 transition-all hover:-translate-y-1 group text-center">
+                        <div class="w-12 h-12 rounded-lg bg-[#141418] border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.19c.63-.78 1.07-1.87.95-2.96-.92.04-2.07.62-2.73 1.39-.59.68-1.1 1.77-.96 2.84 1.03.08 2.11-.49 2.74-1.27z"/></svg>
+                        </div>
+                        <span class="font-space font-bold text-sm text-white">Apple</span>
+                        <span class="text-[10px] font-mono text-gray-500">Security Acknowledgement</span>
+                    </div>
+
+                    <!-- Microsoft -->
+                    <div class="surface p-6 rounded-xl border border-white/10 flex flex-col items-center justify-center gap-3 hover:border-volcano-red/50 transition-all hover:-translate-y-1 group text-center">
+                        <div class="w-12 h-12 rounded-lg bg-[#141418] border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zM24 11.4H12.6V0H24v11.4z"/></svg>
+                        </div>
+                        <span class="font-space font-bold text-sm text-white">Microsoft</span>
+                        <span class="text-[10px] font-mono text-gray-500">MSRC Researcher</span>
+                    </div>
+
+                    <!-- French Gov -->
+                    <div class="surface p-6 rounded-xl border border-white/10 flex flex-col items-center justify-center gap-3 hover:border-volcano-red/50 transition-all hover:-translate-y-1 group text-center">
+                        <div class="w-12 h-12 rounded-lg bg-[#141418] border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <span class="font-space font-bold text-sm text-white">French Gov</span>
+                        <span class="text-[10px] font-mono text-gray-500">CERT-FR Disclosure</span>
+                    </div>
+
+                    <!-- Tesla -->
+                    <div class="surface p-6 rounded-xl border border-white/10 flex flex-col items-center justify-center gap-3 hover:border-volcano-red/50 transition-all hover:-translate-y-1 group text-center">
+                        <div class="w-12 h-12 rounded-lg bg-[#141418] border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-red-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5zm0 2.2L18 8v8l-6 3.8L6 16V8l6-3.8z"/></svg>
+                        </div>
+                        <span class="font-space font-bold text-sm text-white">Tesla</span>
+                        <span class="text-[10px] font-mono text-gray-500">Bug Bounty Disclosure</span>
+                    </div>
+
+                    <!-- NASA -->
+                    <div class="surface p-6 rounded-xl border border-white/10 flex flex-col items-center justify-center gap-3 hover:border-volcano-red/50 transition-all hover:-translate-y-1 group text-center">
+                        <div class="w-12 h-12 rounded-lg bg-[#141418] border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </div>
+                        <span class="font-space font-bold text-sm text-white">NASA</span>
+                        <span class="text-[10px] font-mono text-gray-500">Vulnerability Report</span>
+                    </div>
+
+                    <!-- SpaceX -->
+                    <div class="surface p-6 rounded-xl border border-white/10 flex flex-col items-center justify-center gap-3 hover:border-volcano-red/50 transition-all hover:-translate-y-1 group text-center">
+                        <div class="w-12 h-12 rounded-lg bg-[#141418] border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5L3 7v10l9 4.5 9-4.5V7l-9-4.5zm0 2.4l6.5 3.25L12 11.4 5.5 8.15 12 4.9z"/></svg>
+                        </div>
+                        <span class="font-space font-bold text-sm text-white">SpaceX</span>
+                        <span class="text-[10px] font-mono text-gray-500">Security Advisory</span>
+                    </div>
+
+                    <!-- Amazon -->
+                    <div class="surface p-6 rounded-xl border border-white/10 flex flex-col items-center justify-center gap-3 hover:border-volcano-red/50 transition-all hover:-translate-y-1 group text-center">
+                        <div class="w-12 h-12 rounded-lg bg-[#141418] border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-amber-500" viewBox="0 0 24 24" fill="currentColor"><path d="M15.93 17.09c-2.43 1.83-5.94 2.82-8.99 2.82-4.24 0-8.06-1.57-10.94-4.21-.23-.21-.03-.49.24-.33 3.1 1.83 6.94 2.94 10.92 2.94 2.7 0 5.67-.67 8.35-2.07.41-.21.78.23.42.85z"/></svg>
+                        </div>
+                        <span class="font-space font-bold text-sm text-white">Amazon</span>
+                        <span class="text-[10px] font-mono text-gray-500">Vulnerability Hall of Fame</span>
+                    </div>
+
+                    <!-- Oracle -->
+                    <div class="surface p-6 rounded-xl border border-white/10 flex flex-col items-center justify-center gap-3 hover:border-volcano-red/50 transition-all hover:-translate-y-1 group text-center">
+                        <div class="w-12 h-12 rounded-lg bg-[#141418] border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-red-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                        </div>
+                        <span class="font-space font-bold text-sm text-white">Oracle</span>
+                        <span class="text-[10px] font-mono text-gray-500">Security Alert</span>
+                    </div>
+
+                    <!-- MongoDB -->
+                    <div class="surface p-6 rounded-xl border border-white/10 flex flex-col items-center justify-center gap-3 hover:border-volcano-red/50 transition-all hover:-translate-y-1 group text-center">
+                        <div class="w-12 h-12 rounded-lg bg-[#141418] border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-emerald-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        </div>
+                        <span class="font-space font-bold text-sm text-white">MongoDB</span>
+                        <span class="text-[10px] font-mono text-gray-500">Vulnerability Disclosure</span>
+                    </div>
+
+                    <!-- OpenAI -->
+                    <div class="surface p-6 rounded-xl border border-white/10 flex flex-col items-center justify-center gap-3 hover:border-volcano-red/50 transition-all hover:-translate-y-1 group text-center">
+                        <div class="w-12 h-12 rounded-lg bg-[#141418] border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-teal-400" viewBox="0 0 24 24" fill="currentColor"><path d="M22.28 9.77a6 6 0 0 0-.52-5.18 6.13 6.13 0 0 0-6.57-2.9A6 6 0 0 0 10.4 0a6.13 6.13 0 0 0-5.77 4.12 6 6 0 0 0-4.14 2.9A6.13 6.13 0 0 0 .8 13.59a6 6 0 0 0 .52 5.18 6.13 6.13 0 0 0 6.57 2.9A6 6 0 0 0 13.6 24a6.13 6.13 0 0 0 5.77-4.12 6 6 0 0 0 4.14-2.9 6.13 6.13 0 0 0-.23-7.21z"/></svg>
+                        </div>
+                        <span class="font-space font-bold text-sm text-white">OpenAI</span>
+                        <span class="text-[10px] font-mono text-gray-500">Security Research</span>
+                    </div>
+
+                    <!-- Meta -->
+                    <div class="surface p-6 rounded-xl border border-white/10 flex flex-col items-center justify-center gap-3 hover:border-volcano-red/50 transition-all hover:-translate-y-1 group text-center">
+                        <div class="w-12 h-12 rounded-lg bg-[#141418] border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <svg class="w-7 h-7 text-blue-500" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0 3.17-1.34 5.92-3.48 7.82l-2.02-2.02C20.01 16.38 21 14.3 21 12c0-4.97-4.03-9-9-9S3 7.03 3 12c0 2.3.99 4.38 2.5 5.8l-2.02 2.02C1.34 17.92 0 15.17 0 12 0 5.37 5.37 0 12 0s12 5.37 12 12z"/></svg>
+                        </div>
+                        <span class="font-space font-bold text-sm text-white">Meta</span>
+                        <span class="text-[10px] font-mono text-gray-500">Whitehat Hall of Fame</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Ethical Disclosure Commitment Card -->
+            <div class="surface p-8 rounded-2xl border border-white/10 space-y-4">
+                <h2 class="text-2xl font-space font-bold text-white">Ethical Disclosure Commitment</h2>
                 <p class="text-gray-300 text-sm leading-relaxed">
-                    All security research conducted by MYSTERY adheres strictly to ISO 29147 coordinated vulnerability disclosure guidelines. We partner with vendors to ensure fixes are developed and verified before public disclosure.
+                    All vulnerability disclosures by MYSTERY researchers adhere strictly to ISO 29147 coordinated vulnerability disclosure standards. We work closely with vendor security teams to ensure patches are fully deployed before public disclosure.
                 </p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <div class="p-6 surface rounded-xl border border-white/10">
-                    <div class="text-xs font-mono text-volcano-red mb-1">VULNERABILITY RESEARCH</div>
-                    <h3 class="text-lg font-space font-bold text-white mb-2">Web & API Platforms</h3>
-                    <p class="text-xs text-gray-400">Coordinated disclosures covering critical authorization bypasses, SSRF, and Remote Code Execution (RCE) flaws.</p>
-                </div>
-                <div class="p-6 surface rounded-xl border border-white/10">
-                    <div class="text-xs font-mono text-volcano-red mb-1">API DISCLOSURES</div>
-                    <h3 class="text-lg font-space font-bold text-white mb-2">REST & GraphQL Endpoints</h3>
-                    <p class="text-xs text-gray-400">Reporting BOLA/IDOR vulnerabilities affecting multi-tenant SaaS environments.</p>
-                </div>
-                <div class="p-6 surface rounded-xl border border-white/10">
-                    <div class="text-xs font-mono text-volcano-red mb-1">OPEN SOURCE SECURITY</div>
-                    <h3 class="text-lg font-space font-bold text-white mb-2">Security Tooling</h3>
-                    <p class="text-xs text-gray-400">Contributing bug fixes and security improvements to open-source offensive security tools.</p>
-                </div>
             </div>
         </div>
     </main>
 
-    <footer class="bg-[#070708] border-t border-white/10 py-12 text-center text-xs text-gray-500 font-mono">
-        © 2026 MYSTERY Offensive Security Labs.
+    <!-- Footer -->
+    <footer class="bg-[#070708] border-t border-white/10 py-12 text-center text-xs text-gray-500 font-mono mt-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>© 2026 MYSTERY Security Labs. All rights reserved.</div>
+            <div class="flex gap-6 text-gray-400">
+                <a href="about.html" class="hover:text-white">About</a>
+                <a href="certifications.html" class="hover:text-white">Certifications</a>
+                <a href="../pricing.html" class="hover:text-white">Pricing</a>
+                <a href="../legal/privacy.html" class="hover:text-white">Privacy</a>
+            </div>
+        </div>
     </footer>
     <script src="../assets/js/main.js"></script>
 </body>
